@@ -2,6 +2,7 @@ package main
 
 import (
 	"go-gin-boilerplate/config"
+	"go-gin-boilerplate/docs"
 	"go-gin-boilerplate/routes"
 	"net/http"
 
@@ -11,6 +12,9 @@ import (
 	"os/signal"
 	"syscall"
 	"time"
+
+	swaggerfiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
 func main() {
@@ -20,10 +24,14 @@ func main() {
 
 	// init routes
 	r, err := routes.Init()
-
 	if err != nil {
 		panic(err)
 	}
+
+	// init swagger
+	docs.SwaggerInfo.BasePath = "/api"
+	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
+
 	// graceful shutdown
 	server := &http.Server{
 		Addr:    EnvConfig.Server.Port,

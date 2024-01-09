@@ -1,0 +1,41 @@
+info:
+  contact: {}
+paths:
+  /examples/createExample:
+    post:
+      consumes:
+      - application/json
+      description: Create example
+      parameters:
+      - description: example
+        in: body
+        name: example
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+      summary: Create example
+      tags:
+      - Example
+  /public/ping:
+    get:
+      consumes:
+      - application/json
+      description: Ping
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: Ping
+      tags:
+      - Public
+swagger: "2.0"

@@ -10,5 +10,9 @@ func Init() (*gin.Engine, error) {
 	// public routes, no auth required
 	LoadPublicRoutes(r)
 
+
+	// example routes
+	
+
 	return r, nil
 }
