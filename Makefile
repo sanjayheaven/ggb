@@ -1,5 +1,8 @@
 
 
+# lint the code
+lint:
+	./scripts/lint.sh
 
 # build the binary
 build: 
@@ -7,4 +10,8 @@ build:
 
 # format the code
 format:
-	./scripts/gofmt-check.sh
+	./scripts/format.sh
+
+# swager docs generation
+swag:
+	./scripts/swag.sh
