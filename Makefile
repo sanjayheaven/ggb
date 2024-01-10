@@ -1,4 +1,7 @@
 
+# format the code
+format:
+	./scripts/format.sh
 
 # lint the code
 lint:
@@ -8,10 +11,13 @@ lint:
 build: 
 	./scripts/build.sh
 
-# format the code
-format:
-	./scripts/format.sh
+# clean cache
+clean:
+	./scripts/clean.sh
 
 # swager docs generation
-swag:
-	./scripts/swag.sh
+swagger:
+	./scripts/swagger.sh
+
+# default target
+all: format lint
