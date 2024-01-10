@@ -17,25 +17,18 @@ const docTemplate = `{
     "paths": {
         "/examples/createExample": {
             "post": {
-                "description": "Create example",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
+                "description": "Create Example",
                 "tags": [
                     "Example"
                 ],
-                "summary": "Create example",
                 "parameters": [
                     {
-                        "description": "example",
-                        "name": "example",
+                        "description": "data",
+                        "name": "data",
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "type": "object"
+                            "type": "string"
                         }
                     }
                 ],
@@ -52,16 +45,9 @@ const docTemplate = `{
         "/public/ping": {
             "get": {
                 "description": "Ping",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
                 "tags": [
                     "Public"
                 ],
-                "summary": "Ping",
                 "responses": {
                     "200": {
                         "description": "OK",

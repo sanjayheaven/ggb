@@ -6,15 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// @Summary Create example
-// @Description Create example
-// @Tags Example
-// @Accept  json
-// @Produce  json
-// @Param   example body interface{}  true "example"
-// @Success 200 {object} interface{}
-// @Router /examples/createExample [post]
-func LoadProductRoutes(r *gin.Engine) (*gin.RouterGroup, error) {
+func LoadEXampleRoutes(r *gin.Engine) (*gin.RouterGroup, error) {
 	exampleController := new(controllers.ExampleController)
 	product := r.Group("/examples")
 	{

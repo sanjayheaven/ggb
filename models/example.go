@@ -1,12 +1,8 @@
 package models
 
-import (
-	"gorm.io/gorm"
-)
-
 type Example struct {
-	gorm.Model
+	BasicModel
 
-	Name   string // Name
-	Status string // Status, active or inactive
+	Name   string `json:"name"`                         // Name
+	Status string `json:"status" gorm:"default:active"` // Status, active or inactive
 }

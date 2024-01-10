@@ -11,10 +11,25 @@ var exampleService = new(services.ExampleService)
 
 type ExampleController struct{}
 
+// @Router /examples/createExample [post]
+// @Description Create Example
+// @Tags Example
+// @Param data body string true "data"
+// @Success 200 {object} object
+// @Return 200 {object} object
 func (exampleController *ExampleController) CreateExample(ctx *gin.Context) {
 
-	data := ctx.Request.Body
+	var data map[string]interface{}
+	if err := ctx.ShouldBindJSON(&data); err != nil {
+		ctx.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
 	res := exampleService.CreateExample(data)
-	ctx.JSON(http.StatusOK, gin.H{})
+	if res == nil {
+		ctx.JSON(http.StatusBadRequest, gin.H{"error": "error"})
+		return
+	}
+	ctx.JSON(http.StatusOK, res)
 
 }

@@ -3,6 +3,7 @@ package main
 import (
 	"go-gin-boilerplate/config"
 	"go-gin-boilerplate/docs"
+	"go-gin-boilerplate/models"
 	"go-gin-boilerplate/routes"
 	"net/http"
 
@@ -29,8 +30,11 @@ func main() {
 	}
 
 	// init swagger
-	docs.SwaggerInfo.BasePath = "/api"
+	docs.SwaggerInfo.BasePath = "/"
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
+
+	// connect database
+	models.Connect(EnvConfig.Mysql.Dsn)
 
 	// graceful shutdown
 	server := &http.Server{
