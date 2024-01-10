@@ -18,6 +18,22 @@ paths:
             type: object
       tags:
       - Example
+  /examples/getExample:
+    get:
+      description: Get Example
+      parameters:
+      - description: the example id
+        in: query
+        name: exampleId
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+      tags:
+      - Example
   /public/ping:
     get:
       description: Ping

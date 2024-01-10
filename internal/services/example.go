@@ -18,3 +18,14 @@ func (exampleService *ExampleService) CreateExample(data map[string]interface{})
 	return &example
 
 }
+
+func (exampleService *ExampleService) GetExample(exampleId int) *models.Example {
+
+	example := models.Example{}
+	res := models.DB.First(&example, exampleId).Select("id, name, status")
+
+	if res.Error != nil || res.RowsAffected == 0 {
+		return nil
+	}
+	return &example
+}
