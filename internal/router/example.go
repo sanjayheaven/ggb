@@ -6,11 +6,11 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func LoadEXampleRoutes(r *gin.Engine) (*gin.RouterGroup, error) {
+func LoadExampleRoutes(r *gin.Engine) *gin.RouterGroup {
 	exampleController := new(controllers.ExampleController)
-	product := r.Group("/examples")
+	example := r.Group("/examples")
 	{
-		product.POST("/createExample", exampleController.CreateExample)
+		example.POST("/createExample", exampleController.CreateExample)
 	}
-	return product, nil
+	return example
 }

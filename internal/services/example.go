@@ -10,6 +10,7 @@ func (exampleService *ExampleService) CreateExample(data map[string]interface{})
 		Name: data["name"].(string),
 	}
 	res := models.DB.Create(&example)
+
 	if res.Error != nil || res.RowsAffected == 0 {
 		return nil
 	}

@@ -6,12 +6,12 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func LoadPublicRoutes(r *gin.Engine) (*gin.RouterGroup, error) {
+func LoadPublicRoutes(r *gin.Engine) *gin.RouterGroup {
 
 	publicController := new(controllers.PublicController)
 	public := r.Group("/public")
 	{
 		public.GET("/ping", publicController.Ping)
 	}
-	return public, nil
+	return public
 }

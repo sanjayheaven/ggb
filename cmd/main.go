@@ -59,11 +59,9 @@ func main() {
 		log.Fatalf("server shutdown error: %s\n", err)
 	}
 
+	<-ctx.Done()
+	log.Println("timeout of 5 seconds.")
 	// catching ctx.Done(). timeout of 5 seconds.
-	select {
-	case <-ctx.Done():
-		log.Println("timeout of 5 seconds.")
-	}
 
 	log.Printf("👻 Server is now listening at port:  %s\n", EnvConfig.Server.Port)
 }

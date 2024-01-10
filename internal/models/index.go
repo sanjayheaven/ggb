@@ -27,7 +27,10 @@ func Connect(address string) {
 	}), &gorm.Config{})
 
 	// Migrate the schema
-	db.AutoMigrate(&Example{})
+	migrateErr := db.AutoMigrate(&Example{})
+	if migrateErr != nil {
+		panic(`😫: Auto migrate failed, check your Mysql with ` + address)
+	}
 
 	// export DB
 	DB = db

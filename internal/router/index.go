@@ -16,7 +16,7 @@ func Init() (*gin.Engine, error) {
 	middlewares.LoadMiddlewares(r)
 
 	// example routes
-	LoadEXampleRoutes(r)
+	LoadExampleRoutes(r)
 
 	return r, nil
 }
