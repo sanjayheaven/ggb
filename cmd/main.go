@@ -15,7 +15,6 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/gin-gonic/gin"
 	swaggerfiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
 )
@@ -27,14 +26,14 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	r.Use(gin.Recovery())
 
 	// init logger
 	Logger.Init()
 	logger := Logger.Logger
 
 	// load env config
-	EnvConfig := configs.LoadConfig()
+	configs.LoadConfig()
+	EnvConfig := configs.EnvConfig
 
 	// init swagger
 	swagger.SwaggerInfo.BasePath = "/"

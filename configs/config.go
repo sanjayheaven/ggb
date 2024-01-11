@@ -17,6 +17,8 @@ type Config struct {
 	}
 }
 
+var EnvConfig *Config
+
 func LoadConfig() *Config {
 
 	path, err := os.Getwd() // get curent path
@@ -37,6 +39,9 @@ func LoadConfig() *Config {
 	if err := viper.Unmarshal(config); err != nil {
 		panic(err)
 	}
+
+	// export config
+	EnvConfig = config
 
 	return config
 }

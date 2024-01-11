@@ -19,7 +19,8 @@ type ExampleController struct{}
 // @Success 200 {object} object
 func (exampleController *ExampleController) CreateExample(ctx *gin.Context) {
 
-	var data map[string]interface{}
+	data := make(map[string]interface{})
+
 	if err := ctx.ShouldBindJSON(&data); err != nil {
 		ctx.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return

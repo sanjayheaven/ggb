@@ -1,0 +1,10 @@
+version: "3"
+services:
+  go-gin-boilerplate:
+    image: golang:latest
+    container_name: go-gin-boilerplate
+    working_dir: /server
+    volumes:
+      - ./:/server # mount current directory to /server, make sure your docker-compose.yml is in the root of your project
+    restart: always
+    command: sh -c "make build && ./build/main"
