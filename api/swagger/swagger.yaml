@@ -18,6 +18,23 @@ paths:
             type: object
       tags:
       - Example
+  /examples/deleteExample:
+    post:
+      description: Delete Example
+      parameters:
+      - description: data
+        in: body
+        name: data
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+      tags:
+      - Example
   /examples/getExample:
     get:
       description: Get Example
@@ -27,6 +44,23 @@ paths:
         name: exampleId
         required: true
         type: integer
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+      tags:
+      - Example
+  /examples/updateExample:
+    post:
+      description: Update Example
+      parameters:
+      - description: data
+        in: body
+        name: data
+        required: true
+        schema:
+          type: string
       responses:
         "200":
           description: OK

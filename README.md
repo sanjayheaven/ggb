@@ -26,6 +26,7 @@
 [Air](https://github.com/cosmtrek/air)
 [Logrus](https://github.com/sirupsen/logrus)
 [Lumberjack](https://github.com/natefinch/lumberjack)
+[Jwt](https://github.com/golang-jwt/jwt)
 
 ## 特性
 

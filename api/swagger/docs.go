@@ -42,6 +42,33 @@ const docTemplate = `{
                 }
             }
         },
+        "/examples/deleteExample": {
+            "post": {
+                "description": "Delete Example",
+                "tags": [
+                    "Example"
+                ],
+                "parameters": [
+                    {
+                        "description": "data",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
         "/examples/getExample": {
             "get": {
                 "description": "Get Example",
@@ -55,6 +82,33 @@ const docTemplate = `{
                         "name": "exampleId",
                         "in": "query",
                         "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/examples/updateExample": {
+            "post": {
+                "description": "Update Example",
+                "tags": [
+                    "Example"
+                ],
+                "parameters": [
+                    {
+                        "description": "data",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
                     }
                 ],
                 "responses": {
