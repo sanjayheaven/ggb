@@ -1,0 +1,11 @@
+# HERE IS JUST THE CONFIGURATION EXAMPLE FOR THE APP
+# DO NOT USING THIS FILE AS YOUR CONFIGURATION DIRECTLY
+# PLEASE COPY THIS FILE TO configs/config.yaml AND MODIFY IT
+
+# server
+server:
+  port: ":8080"
+
+# mysql config
+mysql:
+  dsn: "root:123456@tcp(127.0.0.1:3306)/beta?charset=utf8mb4&parseTime=True&loc=Local"

@@ -21,6 +21,7 @@
 go.work
 
 # local config
+configs/config.yaml
 config.yaml
 tmp
 logs

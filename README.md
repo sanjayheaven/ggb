@@ -1,16 +1,20 @@
-<h1 align="center" >Go Gin Boilerplate</h1>
+# Go Gin Boilerplate
 
-<div align="center">
+<div>
 
-一个基于 Gin 框架的开发脚手架，旨在帮助开发者快速搭建和开发 Web 应用程序
+<img src="./assets/golang.png" align="right"/>
 
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/sanjayheaven/go-gin-boilerplate)
 ![CI](https://github.com/sanjayheaven/go-gin-boilerplate/workflows/Go/badge.svg)
+![License](https://img.shields.io/github/license/sanjayheaven/go-gin-boilerplate)
 
 [Swagger 接口](https://google.com)
 
-
 </div>
+
+## 项目介绍
+
+一个基于 Gin 框架的开发脚手架，旨在帮助开发者快速搭建和开发 Web 应用程序。
 
 ## 关键词
 
@@ -25,22 +29,17 @@
 
 ## 特性
 
-- **模块化架构**: 遵循 project-layout 规范, 结构清晰，便于扩展和维护。
-- **强大的中间件支持**: 整合常用中间件，轻松实现日志、认证等功能。
-- **数据库集成**: 提供简单的接口和 ORM 工具，方便与数据库交互。
-- **日志记录**: 集成日志记录功能，方便跟踪应用程序运行状态。
+- **快速开发**: 使用 Gin 框架和相关工具，加速项目的开发和迭代过程。
+- **简单易用**: 遵循 [project-layout](https://github.com/golang-standards/project-layout/tree/master) 规范, 提供清晰简单的代码结构，使新手也能轻松上手。
+- **一体化日志系统**: 集成 Logrus 和 Lumberjack，实现全方位的日志记录和管理。
+- **热重载**: 使用 Air 工具，支持热重载，提高开发效率。
+- **数据库支持**: 集成 Gorm，支持主流数据库，如 MySQL、PostgreSQL 等。
+- **灵活的中间件**: 整合常用中间件，轻松实现日志、认证、跨域等功能。
 
 ## 快速开始
 
-### 拉取项目
-
 ```sh
 git clone https://github.com/sanjayheaven/go-gin-boilerplate.git
-```
-
-### 进入目录，安装依赖
-
-```sh
 cd go-gin-boilerplate
 go mod download
 ```

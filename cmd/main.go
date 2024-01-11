@@ -15,11 +15,19 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/gin-gonic/gin"
 	swaggerfiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
 func main() {
+
+	// init routes
+	r, err := routes.Init()
+	if err != nil {
+		panic(err)
+	}
+	r.Use(gin.Recovery())
 
 	// init logger
 	Logger.Init()
@@ -27,12 +35,6 @@ func main() {
 
 	// load env config
 	EnvConfig := configs.LoadConfig()
-
-	// init routes
-	r, err := routes.Init()
-	if err != nil {
-		panic(err)
-	}
 
 	// init swagger
 	swagger.SwaggerInfo.BasePath = "/"
@@ -46,6 +48,8 @@ func main() {
 		Addr:    EnvConfig.Server.Port,
 		Handler: r,
 	}
+
+	logger.Printf("👻 Server is now listening at port:  %s\n", EnvConfig.Server.Port)
 
 	go func() {
 		if err := server.ListenAndServe(); err != nil && err != http.ErrServerClosed {
@@ -63,10 +67,6 @@ func main() {
 	if err := server.Shutdown(ctx); err != nil {
 		logger.Fatalf("server shutdown error: %s\n", err)
 	}
+	logger.Println("Server exiting")
 
-	<-ctx.Done()
-	logger.Println("timeout of 5 seconds.")
-	// catching ctx.Done(). timeout of 5 seconds.
-
-	logger.Printf("👻 Server is now listening at port:  %s\n", EnvConfig.Server.Port)
 }

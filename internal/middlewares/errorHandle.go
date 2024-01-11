@@ -18,7 +18,7 @@ func ErrorHandle(c *gin.Context) {
 
 			// return error response
 			c.JSON(http.StatusInternalServerError, gin.H{
-				"code":    500,
+				"code":    http.StatusInternalServerError,
 				"message": "Internal Server Error",
 			})
 
