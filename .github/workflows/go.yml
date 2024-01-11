@@ -1,0 +1,31 @@
+name: Go
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go: ["1.20.x", "1.21.x"]
+        include:
+          - go: 1.21.x
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: ${{ matrix.go }}
+          # cache-dependency-path: "**/go.sum"
+
+      - name: Download Dependencies
+        run: |
+          go mod download
+          make lint
+          make build

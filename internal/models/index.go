@@ -1,7 +1,7 @@
 package models
 
 import (
-	"log"
+	"go-gin-boilerplate/internal/pkg"
 	"time"
 
 	"gorm.io/driver/mysql"
@@ -19,6 +19,8 @@ var DB *gorm.DB
 
 func Connect(address string) {
 
+	logger := Logger.Logger
+
 	// refer https://github.com/go-sql-driver/mysql#dsn-data-source-name for details
 
 	db, err := gorm.Open(mysql.New(mysql.Config{
@@ -35,7 +37,7 @@ func Connect(address string) {
 	// export DB
 	DB = db
 
-	log.Printf(`🍟: Successfully connected to Mysql at ` + address)
+	logger.Printf(`🍟: Successfully connected to Mysql at ` + address)
 	if err != nil {
 		panic(`😫: Connected failed, check your Mysql with ` + address)
 	}
