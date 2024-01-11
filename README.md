@@ -16,6 +16,9 @@
 
 一个基于 Gin 框架的开发脚手架，旨在帮助开发者快速搭建和开发 Web 应用程序。
 
+- [English](./README_en.md)
+- [中文介绍](./README.md)
+
 ## 关键词
 
 [Go](https://github.com/golang/go)
