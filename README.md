@@ -8,7 +8,7 @@
 ![CI](https://github.com/sanjayheaven/go-gin-boilerplate/workflows/Go/badge.svg)
 ![License](https://img.shields.io/github/license/sanjayheaven/go-gin-boilerplate)
 
-[Swagger 接口](https://go-gin-boilerplate.gganbu.services/swagger/index.html)
+[Swagger 接口文档](https://go-gin-boilerplate.gganbu.services/swagger/index.html)
 
 </div>
 
@@ -90,6 +90,18 @@ go run cmd/main.go
 docker compose up -d
 ```
 
-## 贡献
+## 支持 🫶
 
-欢迎提交 [issue](https://github.com/sanjayheaven/go-gin-boilerplate/issues) 和 [PR](https://github.com/sanjayheaven/go-gin-boilerplate/pulls)，感谢你的支持。
+- Star 🌟 项目
+- 欢迎提交 [issue](https://github.com/sanjayheaven/go-gin-boilerplate/issues)。感谢您的支持
+- 帮助在社交媒体上宣传并向朋友推荐它
+
+  [![Twitter](https://img.shields.io/twitter/url?label=Twitter&logo=twitter&style=flat&url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fgo-gin-boilerplate)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fgo-gin-boilerplate)
+  [![Facebook](https://img.shields.io/twitter/url?label=Facebook&logo=facebook&style=flat&url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fgo-gin-boilerplate)](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fgo-gin-boilerplate)
+  [![WhatsApp](https://img.shields.io/twitter/url?label=WhatsApp&logo=whatsapp&style=flat&url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fgo-gin-boilerplate)](https://api.whatsapp.com/send?text=Wow:%20https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fgo-gin-boilerplate)
+  [![Telegram](https://img.shields.io/twitter/url?label=Telegram&logo=telegram&style=flat&url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fgo-gin-boilerplate)](https://t.me/share/url?url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fgo-gin-boilerplate)
+
+- 你也可以在 [Ko-Fi](https://ko-fi.com/dorvan) 或者 [Buy Me A Coffee](https://www.buymeacoffee.com/dorvan) 上赞助一杯咖啡
+
+  <a href='https://ko-fi.com/J3J1T95FG' target='_blank'><img style='border:0px;height:40px;' src='https://storage.ko-fi.com/cdn/kofi2.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+  <a href="https://www.buymeacoffee.com/dorvan" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 40px !important;width: 145px !important;" ></a>

@@ -3,6 +3,8 @@ name: Go
 on:
   push:
     branches: ["main"]
+    paths-ignore: [
+    "README.*", "LICENSE", "assets/**"]
   workflow_dispatch:
 
 jobs:
