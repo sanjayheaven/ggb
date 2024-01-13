@@ -23,6 +23,7 @@ A development boilerplate based on the Gin framework, aimed at helping developer
 
 [Go](https://github.com/golang/go)
 [Gin](https://github.com/gin-gonic/gin)
+[Cobra](https://github.com/spf13/cobra)
 [Viper](https://github.com/spf13/viper)
 [Gorm](https://github.com/go-gorm/gorm)
 [Gin-Swagger](https://github.com/swaggo/gin-swagger)
@@ -33,7 +34,7 @@ A development boilerplate based on the Gin framework, aimed at helping developer
 
 ## Features
 
-- **Rapid Development**: Accelerate project development and iteration using the Gin framework and related tools.
+- **Rapid Development**: Accelerate project development and iteration using the **Gin** framework and related tools.
 - **Simple and Easy to Use**: Follow the [project-layout](https://github.com/golang-standards/project-layout/tree/master) specification, providing a clear and simple code structure that even beginners can easily understand.
 - **Integrated Logging System**: Integrated Logrus and Lumberjack for comprehensive log recording and management.
 - **Hot Reload**: Utilize the Air tool for hot reloading, improving development efficiency.
@@ -73,7 +74,7 @@ air
 - Run the project using [go run](https://golang.org/cmd/go/#hdr-Compile_and_run_Go_program)
 
 ```sh
-go run cmd/main.go
+go run main.go server
 ```
 
 ## Deployment

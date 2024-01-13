@@ -1,4 +1,4 @@
-package main
+package cmd
 
 import (
 	"go-gin-boilerplate/api/swagger"
@@ -15,11 +15,26 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/spf13/cobra"
 	swaggerfiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
-func main() {
+var ServerStartCmd = &cobra.Command{
+	Use:   "server",
+	Short: `Start the server`,
+	Run: func(cmd *cobra.Command, args []string) {
+		// Do Stuff Here
+		// log.Println("Hello World!")
+		start()
+	},
+}
+
+func init() {
+	rootCmd.AddCommand(ServerStartCmd) // add server start command
+}
+
+func start() {
 
 	// init routes
 	r, err := routes.Init()

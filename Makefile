@@ -1,4 +1,7 @@
 
+
+.PHONY: build
+
 # format the code
 format:
 	./scripts/format.sh

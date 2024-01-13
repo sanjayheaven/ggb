@@ -25,3 +25,4 @@ configs/config.yaml
 config.yaml
 tmp
 logs
+build/*

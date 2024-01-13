@@ -23,6 +23,7 @@
 
 [Go](https://github.com/golang/go)
 [Gin](https://github.com/gin-gonic/gin)
+[Cobra](https://github.com/spf13/cobra)
 [Viper](https://github.com/spf13/viper)
 [Gorm](https://github.com/go-gorm/gorm)
 [Gin-Swagger](https://github.com/swaggo/gin-swagger)
@@ -33,7 +34,7 @@
 
 ## 特性
 
-- **快速开发**: 使用 Gin 框架和相关工具，加速项目的开发和迭代过程。
+- **快速开发**: 使用 **Gin** 框架和相关工具，加速项目的开发和迭代过程。
 - **简单易用**: 遵循 [project-layout](https://github.com/golang-standards/project-layout/tree/master) 规范, 提供清晰简单的代码结构，使新手也能轻松上手。
 - **一体化日志系统**: 集成 Logrus 和 Lumberjack，实现全方位的日志记录和管理。
 - **热重载**: 使用 Air 工具，支持热重载，提高开发效率。
@@ -73,7 +74,13 @@ air
 - 使用 [go run](https://golang.org/cmd/go/#hdr-Compile_and_run_Go_program) 运行项目
 
 ```sh
-go run cmd/main.go
+go run main.go server
+```
+
+## 打包
+
+```sh
+make build
 ```
 
 ## 部署

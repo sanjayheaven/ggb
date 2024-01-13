@@ -1,7 +1,7 @@
 #!/bin/bash
 
-SRC="cmd/main.go"
-OUTPUT="build/main"
+SRC="main.go"
+OUTPUT="build/ggb"
 
 echo "Starting build..."
 
