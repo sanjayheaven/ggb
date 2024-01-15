@@ -1,10 +1,9 @@
 package cmd
 
 import (
-	"go-gin-boilerplate/api/swagger"
-	"go-gin-boilerplate/configs"
+	config "go-gin-boilerplate/configs"
 	"go-gin-boilerplate/internal/models"
-	Logger "go-gin-boilerplate/internal/pkg"
+	Logger "go-gin-boilerplate/internal/pkg/logger"
 	routes "go-gin-boilerplate/internal/router"
 
 	"net/http"
@@ -16,21 +15,26 @@ import (
 	"time"
 
 	"github.com/spf13/cobra"
-	swaggerfiles "github.com/swaggo/files"
-	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
-var ServerStartCmd = &cobra.Command{
-	Use:   "server",
-	Short: `Start the server`,
-	Run: func(cmd *cobra.Command, args []string) {
-		// Do Stuff Here
-		// log.Println("Hello World!")
-		start()
-	},
-}
+var (
+	// host           string
+	// port           uint
+	ServerStartCmd = &cobra.Command{
+		Use:   "server",
+		Short: `Start the server`,
+		Run: func(cmd *cobra.Command, args []string) {
+			// Do Stuff Here
+			// log.Println("Hello World!")
+			start()
+		},
+	}
+)
 
 func init() {
+
+	// ServerStartCmd.Flags().StringVarP(&host, "host", "H", "127.0.0.1", "HTTP server host") // server host
+	// ServerStartCmd.Flags().UintVarP(&port, "port", "p", 8080, "HTTP server port")          // server port
 	rootCmd.AddCommand(ServerStartCmd) // add server start command
 }
 
@@ -47,12 +51,8 @@ func start() {
 	logger := Logger.Logger
 
 	// load env config
-	configs.LoadConfig()
-	EnvConfig := configs.EnvConfig
-
-	// init swagger
-	swagger.SwaggerInfo.BasePath = "/"
-	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
+	config.LoadConfig()
+	EnvConfig := config.EnvConfig
 
 	// connect database
 	models.Connect(EnvConfig.Mysql.Dsn)

@@ -36,7 +36,7 @@ clean:
 .PHONY: swagger
 # swager docs generation
 swagger:
-	swag init -g main.go -o api/swagger
+	./scripts/swagger.sh
 
 .PHONY: all
 # default target

@@ -6,9 +6,10 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+var publicController = new(controllers.PublicController)
+
 func LoadPublicRoutes(r *gin.Engine) *gin.RouterGroup {
 
-	publicController := new(controllers.PublicController)
 	public := r.Group("/public")
 	{
 		public.GET("/ping", publicController.Ping)

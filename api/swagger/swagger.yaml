@@ -1,5 +1,12 @@
+basePath: /api/v1
+host: go-gin-boilerplate.gganbu.services
 info:
-  contact: {}
+  contact:
+    name: Dorvan
+    url: https://github.com/sanjayheaven
+  description: This is a swagger api document for Go Gin Boilerplate.
+  title: Go Gin Boilerplate API
+  version: v1.0.0
 paths:
   /examples/createExample:
     post:
@@ -78,4 +85,23 @@ paths:
             type: string
       tags:
       - Public
+  /users/loginByUsernamePassword:
+    post:
+      description: Login By Username Password
+      parameters:
+      - description: username
+        in: body
+        name: username
+        required: true
+        schema:
+          type: string
+      - description: password
+        in: body
+        name: password
+        required: true
+        schema:
+          type: string
+      responses: {}
+      tags:
+      - User
 swagger: "2.0"

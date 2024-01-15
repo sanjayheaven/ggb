@@ -9,7 +9,10 @@ const docTemplate = `{
     "info": {
         "description": "{{escape .Description}}",
         "title": "{{.Title}}",
-        "contact": {},
+        "contact": {
+            "name": "Dorvan",
+            "url": "https://github.com/sanjayheaven"
+        },
         "version": "{{.Version}}"
     },
     "host": "{{.Host}}",
@@ -136,18 +139,47 @@ const docTemplate = `{
                     }
                 }
             }
+        },
+        "/users/loginByUsernamePassword": {
+            "post": {
+                "description": "Login By Username Password",
+                "tags": [
+                    "User"
+                ],
+                "parameters": [
+                    {
+                        "description": "username",
+                        "name": "username",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "password",
+                        "name": "password",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
         }
     }
 }`
 
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
-	Version:          "",
-	Host:             "",
-	BasePath:         "",
+	Version:          "v1.0.0",
+	Host:             "go-gin-boilerplate.gganbu.services",
+	BasePath:         "/api/v1",
 	Schemes:          []string{},
-	Title:            "",
-	Description:      "",
+	Title:            "Go Gin Boilerplate API",
+	Description:      "This is a swagger api document for Go Gin Boilerplate.",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
 	LeftDelim:        "{{",

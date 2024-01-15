@@ -1,8 +1,16 @@
 {
     "swagger": "2.0",
     "info": {
-        "contact": {}
+        "description": "This is a swagger api document for Go Gin Boilerplate.",
+        "title": "Go Gin Boilerplate API",
+        "contact": {
+            "name": "Dorvan",
+            "url": "https://github.com/sanjayheaven"
+        },
+        "version": "v1.0.0"
     },
+    "host": "go-gin-boilerplate.gganbu.services",
+    "basePath": "/api/v1",
     "paths": {
         "/examples/createExample": {
             "post": {
@@ -124,6 +132,35 @@
                         }
                     }
                 }
+            }
+        },
+        "/users/loginByUsernamePassword": {
+            "post": {
+                "description": "Login By Username Password",
+                "tags": [
+                    "User"
+                ],
+                "parameters": [
+                    {
+                        "description": "username",
+                        "name": "username",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "password",
+                        "name": "password",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {}
             }
         }
     }

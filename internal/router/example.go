@@ -6,8 +6,9 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+var exampleController = new(controllers.ExampleController)
+
 func LoadExampleRoutes(r *gin.Engine) *gin.RouterGroup {
-	exampleController := new(controllers.ExampleController)
 	example := r.Group("/examples")
 	{
 		example.POST("/createExample", exampleController.CreateExample)
