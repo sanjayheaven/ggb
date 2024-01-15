@@ -1,7 +1,7 @@
 package models
 
 import (
-	"go-gin-boilerplate/internal/pkg"
+	Logger "go-gin-boilerplate/internal/pkg/logger"
 	"time"
 
 	"gorm.io/driver/mysql"
@@ -29,7 +29,8 @@ func Connect(address string) {
 	}), &gorm.Config{})
 
 	// Migrate the schema
-	migrateErr := db.AutoMigrate(&Example{})
+	migrateErr := db.AutoMigrate(&Example{}, &User{})
+
 	if migrateErr != nil {
 		panic(`😫: Auto migrate failed, check your Mysql with ` + address)
 	}
