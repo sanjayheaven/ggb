@@ -8,6 +8,11 @@ format:
 # fmt is an alias for format
 fmt: format
 
+.PHONY: goimports
+# Run goimports against code
+goimports:
+	goimports -w .
+
 .PHONY: vet
 # Run go vet against code
 vet:
@@ -35,4 +40,4 @@ swagger:
 
 .PHONY: all
 # default target
-all: format lint
+all: goimports format lint
