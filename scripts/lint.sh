@@ -1,3 +1,5 @@
-#!/bin/bash
+#!/bin/sh
+
+go vet ./...
 
 golangci-lint run
