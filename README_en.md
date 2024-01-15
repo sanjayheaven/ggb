@@ -49,6 +49,54 @@ cd go-gin-boilerplate
 go mod download
 ```
 
+<!-- ### 创建 githooks 软链接
+
+```sh
+cd .git/hooks
+ln -s ../../githooks/* .
+```
+
+> 提示：
+>
+> - 如何确认已经创建成功?
+>
+> 运行以下命令：
+>
+> ```sh
+> ls -l . # 现在你的当前目录位置应该在 .git/hooks 目录下
+> ```
+>
+> 如果成功，你将会看到输出包含以下内容：
+>
+> ```sh
+> commit-msg -> ../../githooks/commit-msg
+> pre-commit -> ../../githooks/pre-commit
+> ``` -->
+
+### Create a githooks soft link 【Recommended】
+
+```sh
+cd .git/hooks
+ln -s ../../githooks/* .
+```
+
+> Tips:
+>
+> - How to confirm that the creation is successful?
+>
+> Run the following command:
+>
+> ```sh
+> ls -l . # Now your current directory location should be in the .git/hooks directory
+> ```
+>
+> If successful, you will see the output containing the following content:
+>
+> ```sh
+> commit-msg -> ../../githooks/commit-msg
+> pre-commit -> ../../githooks/pre-commit
+> ```
+
 ### Configuration Setup
 
 - Navigate to the `configs` directory, copy the `config.example.yaml` file, and rename it to `config.yaml`.

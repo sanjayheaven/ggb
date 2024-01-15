@@ -1,0 +1,4 @@
+#!/bin/sh
+
+make format
+make lint
