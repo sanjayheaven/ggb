@@ -1,0 +1,35 @@
+name: Swagger API
+
+on:
+  push:
+    branches: ["main"]
+    paths-ignore: ["README.*", "LICENSE", "assets/**"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: 1.21
+          cache: false # managed by golangci-lint
+
+      - name: Download Dependencies
+        run: |
+          go mod download
+
+      - name: Generate Swagger Api Docs
+        run: |
+          make swagger
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./api/swagger
