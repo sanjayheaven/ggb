@@ -132,7 +132,7 @@ go run main.go server
 Deploy the application using **_docker-compose_**.
 Ensure that Docker is installed on the server, and you are familiar with the usage of docker compose.
 
-- Copy the [docker-compose.yml](./deployments/docker-compose.yml) configuration file to the project root directory.
+- Copy the `deployments/docker-compose.yml` configuration file to the project root directory.
 - Execute the following command to start the application
 
 ```sh

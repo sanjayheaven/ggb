@@ -114,7 +114,7 @@ make build
 使用 docker-compose 部署应用程序。  
 确保 在服务器中已经安装 docker ，并且熟悉 docker compose 的使用
 
-- 复制 [docker-compose.yml](./deployments/docker-compose.yml) 配置文件到 项目根目录 中
+- 复制 `deployments/docker-compose.yml` 配置文件到 项目根目录 中
 - 执行以下命令，启动应用程序
 
 ```sh

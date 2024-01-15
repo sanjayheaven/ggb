@@ -9,8 +9,6 @@
         },
         "version": "v1.0.0"
     },
-    "host": "go-gin-boilerplate.gganbu.services",
-    "basePath": "/api/v1",
     "paths": {
         "/examples/createExample": {
             "post": {
@@ -142,25 +140,31 @@
                 ],
                 "parameters": [
                     {
-                        "description": "username",
-                        "name": "username",
+                        "description": "username、password",
+                        "name": "data",
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "description": "password",
-                        "name": "password",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
+                            "$ref": "#/definitions/controllers.LoginByUsernamePasswordRequest"
                         }
                     }
                 ],
                 "responses": {}
+            }
+        }
+    },
+    "definitions": {
+        "controllers.LoginByUsernamePasswordRequest": {
+            "type": "object",
+            "properties": {
+                "password": {
+                    "type": "string",
+                    "default": "123456"
+                },
+                "username": {
+                    "type": "string",
+                    "default": "admin"
+                }
             }
         }
     }

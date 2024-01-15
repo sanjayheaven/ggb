@@ -148,25 +148,31 @@ const docTemplate = `{
                 ],
                 "parameters": [
                     {
-                        "description": "username",
-                        "name": "username",
+                        "description": "username、password",
+                        "name": "data",
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "description": "password",
-                        "name": "password",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
+                            "$ref": "#/definitions/controllers.LoginByUsernamePasswordRequest"
                         }
                     }
                 ],
                 "responses": {}
+            }
+        }
+    },
+    "definitions": {
+        "controllers.LoginByUsernamePasswordRequest": {
+            "type": "object",
+            "properties": {
+                "password": {
+                    "type": "string",
+                    "default": "123456"
+                },
+                "username": {
+                    "type": "string",
+                    "default": "admin"
+                }
             }
         }
     }
@@ -175,8 +181,8 @@ const docTemplate = `{
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
 	Version:          "v1.0.0",
-	Host:             "go-gin-boilerplate.gganbu.services",
-	BasePath:         "/api/v1",
+	Host:             "",
+	BasePath:         "",
 	Schemes:          []string{},
 	Title:            "Go Gin Boilerplate API",
 	Description:      "This is a swagger api document for Go Gin Boilerplate.",

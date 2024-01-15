@@ -7,4 +7,4 @@ services:
     volumes:
       - ./:/server # mount current directory to /server, make sure your docker-compose.yml is in the root of your project
     restart: always
-    command: sh -c "make build && ./build/main"
+    command: sh -c "make build && ./build/ggb server"
