@@ -15,6 +15,9 @@ type Config struct {
 	Mysql struct {
 		Dsn string
 	}
+	Jwt struct {
+		Secret string
+	}
 }
 
 var EnvConfig *Config

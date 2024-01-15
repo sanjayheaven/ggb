@@ -34,7 +34,7 @@ func (exampleController *ExampleController) CreateExample(ctx *gin.Context) {
 // @Router /examples/getExample [get]
 // @Description Get Example
 // @Tags Example
-// @Param exampleId query int true "the example id"
+// @Param exampleId query int true "the example id" 22
 // @Success 200 {object} object
 func (exampleController *ExampleController) GetExample(ctx *gin.Context) {
 	exampleIdStr := ctx.Query("exampleId")
@@ -43,6 +43,7 @@ func (exampleController *ExampleController) GetExample(ctx *gin.Context) {
 		ctx.JSON(http.StatusBadRequest, gin.H{"code": http.StatusBadRequest, "message": "error param"})
 		return
 	}
+
 	res := exampleService.GetExample(exampleId)
 	if res == nil {
 		ctx.JSON(http.StatusNotFound, gin.H{"code": http.StatusNotFound, "message": "Not Found"})
