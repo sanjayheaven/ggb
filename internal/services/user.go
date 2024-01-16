@@ -17,7 +17,7 @@ func (userService *UserService) LoginByUsernamePassword(username string, passwor
 	user := models.User{
 		Username: username,
 	}
-	res := models.DB.First(&user, "username = ?", username)
+	res := db.First(&user, "username = ?", username)
 	if res.Error != nil || res.RowsAffected == 0 {
 		return ""
 	}

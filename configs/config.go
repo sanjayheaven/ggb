@@ -9,15 +9,10 @@ import (
 )
 
 type Config struct {
-	Server struct {
-		Port string
-	}
-	Mysql struct {
-		Dsn string
-	}
-	Jwt struct {
-		Secret string
-	}
+	Mysql  Mysql
+	Redis  Redis
+	Server Server
+	Jwt    Jwt
 }
 
 var EnvConfig *Config

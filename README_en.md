@@ -36,8 +36,9 @@ A development boilerplate based on the Gin framework, aimed at helping developer
 
 - **Rapid Development**: Accelerate project development and iteration using the **Gin** framework and related tools.
 - **Simple and Easy to Use**: Follow the [project-layout](https://github.com/golang-standards/project-layout/tree/master) specification, providing a clear and simple code structure that even beginners can easily understand.
-- **Integrated Logging System**: Integrated Logrus and Lumberjack for comprehensive log recording and management.
+- **Advanced CLI Experience**: Use **Cobra** to create modern command line tools to simplify project management and operations.
 - **Hot Reload**: Utilize the Air tool for hot reloading, improving development efficiency.
+- **Integrated Logging System**: Integrated Logrus and Lumberjack for comprehensive log recording and management.
 - **Database Support**: Integrated Gorm, supporting mainstream databases such as MySQL, PostgreSQL, etc.
 - **Flexible Middleware**: Incorporate common middleware for easy implementation of features such as logging, authentication, cross-origin resource sharing (CORS), rate limiting, etc.
 
@@ -48,30 +49,6 @@ git clone https://github.com/sanjayheaven/go-gin-boilerplate.git
 cd go-gin-boilerplate
 go mod download
 ```
-
-<!-- ### 创建 githooks 软链接
-
-```sh
-cd .git/hooks
-ln -s ../../githooks/* .
-```
-
-> 提示：
->
-> - 如何确认已经创建成功?
->
-> 运行以下命令：
->
-> ```sh
-> ls -l . # 现在你的当前目录位置应该在 .git/hooks 目录下
-> ```
->
-> 如果成功，你将会看到输出包含以下内容：
->
-> ```sh
-> commit-msg -> ../../githooks/commit-msg
-> pre-commit -> ../../githooks/pre-commit
-> ``` -->
 
 ### Create a githooks soft link 【Recommended】
 

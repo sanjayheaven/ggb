@@ -12,7 +12,7 @@ func (exampleService *ExampleService) CreateExample(data map[string]interface{})
 		Name: data["name"].(string),
 	}
 
-	res := models.DB.Create(&example)
+	res := db.Create(&example)
 	if res.Error != nil || res.RowsAffected == 0 {
 		return nil
 	}
@@ -24,7 +24,7 @@ func (exampleService *ExampleService) CreateExample(data map[string]interface{})
 func (exampleService *ExampleService) GetExample(exampleId int) *models.Example {
 
 	example := models.Example{}
-	res := models.DB.First(&example, exampleId).Select("id, name, status")
+	res := db.First(&example, exampleId).Select("id, name, status")
 
 	if res.Error != nil || res.RowsAffected == 0 {
 		return nil
@@ -37,7 +37,7 @@ func (exampleService *ExampleService) UpdateExample(data map[string]interface{})
 	example := models.Example{}
 	example.ID = uint(data["exampleId"].(int))
 
-	res := models.DB.Model(&example).Updates(data)
+	res := db.Model(&example).Updates(data)
 
 	if res.Error != nil || res.RowsAffected == 0 {
 		return false
@@ -48,7 +48,7 @@ func (exampleService *ExampleService) UpdateExample(data map[string]interface{})
 func (exampleService *ExampleService) DeleteExample(exampleId int) bool {
 
 	example := models.Example{}
-	res := models.DB.Delete(&example, exampleId)
+	res := db.Delete(&example, exampleId)
 
 	if res.Error != nil || res.RowsAffected == 0 {
 		return false

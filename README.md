@@ -36,10 +36,12 @@
 
 - **快速开发**: 使用 **Gin** 框架和相关工具，加速项目的开发和迭代过程。
 - **简单易用**: 遵循 [project-layout](https://github.com/golang-standards/project-layout/tree/master) 规范, 提供清晰简单的代码结构，使新手也能轻松上手。
-- **一体化日志系统**: 集成 Logrus 和 Lumberjack，实现全方位的日志记录和管理。
-- **热重载**: 使用 Air 工具，支持热重载，提高开发效率。
-- **数据库支持**: 集成 Gorm，支持主流数据库，如 MySQL、PostgreSQL 等。
+- **先进的 CLI 体验**: 使用 **Cobra** 打造现代命令行工具，简化项目管理和操作。
+- **热重载**: 使用 **Air** 工具，支持热重载，提高开发效率。
+- **一体化日志系统**: 集成 **Logrus** 和 **Lumberjack**, 实现全方位的日志记录和管理。
+- **数据库支持**: 集成 **Gorm**, 支持主流数据库，如 MySQL、PostgreSQL 等。
 - **灵活的中间件**: 整合常用中间件，轻松实现日志、认证、跨域、限流等功能。
+<!-- - **统一错误处理**: 统一的错误处理机制，简化错误信息的捕获和处理。 -->
 
 ## 快速开始
 
@@ -49,7 +51,7 @@ cd go-gin-boilerplate
 go mod download
 ```
 
-### 创建 githooks 软链接
+### 创建 githooks 软链接【推荐】
 
 ```sh
 cd .git/hooks
