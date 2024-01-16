@@ -31,6 +31,8 @@ paths:
           description: OK
           schema:
             type: object
+      security:
+      - BearerAuth: []
       tags:
       - Example
   /examples/deleteExample:
@@ -48,6 +50,8 @@ paths:
           description: OK
           schema:
             type: object
+      security:
+      - BearerAuth: []
       tags:
       - Example
   /examples/getExample:
@@ -64,6 +68,8 @@ paths:
           description: OK
           schema:
             type: object
+      security:
+      - BearerAuth: []
       tags:
       - Example
   /examples/updateExample:
@@ -81,6 +87,8 @@ paths:
           description: OK
           schema:
             type: object
+      security:
+      - BearerAuth: []
       tags:
       - Example
   /public/ping:
@@ -106,4 +114,10 @@ paths:
       responses: {}
       tags:
       - User
+securityDefinitions:
+  BearerAuth:
+    description: Type "Bearer" followed by a space and JWT token.
+    in: header
+    name: Authorization
+    type: apiKey
 swagger: "2.0"

@@ -11,14 +11,19 @@ var userService = new(services.UserService)
 
 type UserController struct{}
 
+type LoginByUsernamePasswordRequest struct {
+	Usernmae string `json:"username" default:"admin"`
+	Password string `json:"password" default:"123456"`
+}
+
 // @Router /users/loginByUsernamePassword [post]
 // @Description Login By Username Password
 // @Tags User
-// @Param username body string true "username"
-// @Param password body string true "password"
+// @Param data body LoginByUsernamePasswordRequest true "username、password"
 func (userController *UserController) LoginByUsernamePassword(ctx *gin.Context) {
 
 	data := make(map[string]interface{})
+
 	if err := ctx.ShouldBindJSON(&data); err != nil {
 		ctx.JSON(http.StatusBadRequest, gin.H{"code": http.StatusBadRequest, "message": err.Error()})
 		return
@@ -32,11 +37,11 @@ func (userController *UserController) LoginByUsernamePassword(ctx *gin.Context) 
 	}
 
 	token := userService.LoginByUsernamePassword(username, password)
-
 	if token == "" {
-		ctx.JSON(http.StatusInternalServerError, gin.H{"code": http.StatusInternalServerError, "message": "Internal Server Error"})
+		ctx.JSON(http.StatusBadRequest, gin.H{"code": http.StatusBadRequest, "message": "Username or Password Error"})
 		return
 	}
+
 	ctx.String(http.StatusOK, token)
 
 }

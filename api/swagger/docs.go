@@ -20,6 +20,11 @@ const docTemplate = `{
     "paths": {
         "/examples/createExample": {
             "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Create Example",
                 "tags": [
                     "Example"
@@ -47,6 +52,11 @@ const docTemplate = `{
         },
         "/examples/deleteExample": {
             "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Delete Example",
                 "tags": [
                     "Example"
@@ -74,6 +84,11 @@ const docTemplate = `{
         },
         "/examples/getExample": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Get Example",
                 "tags": [
                     "Example"
@@ -99,6 +114,11 @@ const docTemplate = `{
         },
         "/examples/updateExample": {
             "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Update Example",
                 "tags": [
                     "Example"
@@ -174,6 +194,14 @@ const docTemplate = `{
                     "default": "admin"
                 }
             }
+        }
+    },
+    "securityDefinitions": {
+        "BearerAuth": {
+            "description": "Type \"Bearer\" followed by a space and JWT token.",
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
         }
     }
 }`

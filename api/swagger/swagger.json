@@ -12,6 +12,11 @@
     "paths": {
         "/examples/createExample": {
             "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Create Example",
                 "tags": [
                     "Example"
@@ -39,6 +44,11 @@
         },
         "/examples/deleteExample": {
             "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Delete Example",
                 "tags": [
                     "Example"
@@ -66,6 +76,11 @@
         },
         "/examples/getExample": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Get Example",
                 "tags": [
                     "Example"
@@ -91,6 +106,11 @@
         },
         "/examples/updateExample": {
             "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Update Example",
                 "tags": [
                     "Example"
@@ -166,6 +186,14 @@
                     "default": "admin"
                 }
             }
+        }
+    },
+    "securityDefinitions": {
+        "BearerAuth": {
+            "description": "Type \"Bearer\" followed by a space and JWT token.",
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
         }
     }
 }

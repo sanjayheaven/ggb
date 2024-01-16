@@ -1,45 +1,56 @@
 package utils
 
 import (
-	configs "go-gin-boilerplate/configs"
+	"fmt"
+	"go-gin-boilerplate/configs"
+	"time"
 
 	"github.com/golang-jwt/jwt/v5"
 )
 
-// GenerateToken generate tokens used for auth
-func GenerateToken(data map[string]interface{}) string {
+type Claims struct {
+	jwt.RegisteredClaims
+
+	Uid      uint   `json:"uid"`
+	Username string `json:"username"`
+}
+
+// generate tokens used for auth
+func GenerateToken(claims *Claims) string {
 	Envconfig := configs.EnvConfig
 
-	claims := jwt.MapClaims{}
-	for k, v := range data {
-		claims[k] = v
-	}
-	token, err := jwt.NewWithClaims(jwt.SigningMethodHS256, claims).SignedString(Envconfig.Jwt.Secret)
+	claims.ExpiresAt = jwt.NewNumericDate(time.Now().Add(time.Minute * 30)) // set expire time
+
+	token, err := jwt.NewWithClaims(jwt.SigningMethodHS256, claims).SignedString([]byte(Envconfig.Jwt.Secret))
 	if err != nil {
 		panic(err)
 	}
 	return token
 }
 
-// VerifyToken verify token
-func JwtVerify(tokenStr string) (jwt.MapClaims, error) {
-	Envconfig := configs.EnvConfig
+// verify token
+func JwtVerify(tokenStr string) (*Claims, error) {
 
-	claims := jwt.MapClaims{}
-	token, err := jwt.ParseWithClaims(tokenStr, claims, func(token *jwt.Token) (interface{}, error) {
-		// if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
-		// 	return nil, fmt.Errorf("Unexpected signing method: %v", token.Header["alg"])
-		// }
+	Envconfig := configs.EnvConfig
+	token, err := jwt.ParseWithClaims(tokenStr, &Claims{}, func(token *jwt.Token) (interface{}, error) {
+		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
+			return nil, fmt.Errorf("unexpected signing method: %v", token.Header["alg"])
+		}
 		return []byte(Envconfig.Jwt.Secret), nil
 	})
+
 	if !token.Valid || err != nil {
-		panic("token invalid")
+		return nil, fmt.Errorf("token invalid")
+	}
+	claims, ok := token.Claims.(*Claims)
+
+	if float64(claims.ExpiresAt.Unix()) < float64(time.Now().Unix()) {
+		return nil, fmt.Errorf("token expired")
 	}
 
-	if claims, ok := token.Claims.(jwt.MapClaims); ok {
-		return claims, err
-	} else {
+	if !ok {
 		return nil, err
 	}
+	return claims, err
 
 }

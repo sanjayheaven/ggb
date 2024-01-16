@@ -9,8 +9,10 @@ import "go-gin-boilerplate/cmd"
 // @contact.name Dorvan
 // @contact.url https://github.com/sanjayheaven
 
-// @host go-gin-boilerplate.gganbu.services
-// @BasePath /api/v1
+//	@securityDefinitions.apikey	BearerAuth
+//	@in							header
+//	@name						Authorization
+//	@description				Type "Bearer" followed by a space and JWT token.
 
 func main() {
 	cmd.Execute()

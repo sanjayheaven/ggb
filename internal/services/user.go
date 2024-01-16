@@ -4,7 +4,7 @@ import (
 	"go-gin-boilerplate/internal/models"
 	"go-gin-boilerplate/internal/pkg/utils"
 
-	"github.com/golang-jwt/jwt/v5"
+	"golang.org/x/crypto/bcrypt"
 )
 
 type UserService struct{}
@@ -21,18 +21,15 @@ func (userService *UserService) LoginByUsernamePassword(username string, passwor
 	if res.Error != nil || res.RowsAffected == 0 {
 		return ""
 	}
-
-	token := utils.GenerateToken(jwt.MapClaims{
-		"uid":      user.ID,
-		"username": "admin",
-	})
+	err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(password))
+	if err != nil {
+		return ""
+	}
+	claims := utils.Claims{
+		Username: user.Username,
+		Uid:      user.ID,
+	}
+	token := utils.GenerateToken(&claims)
 
 	return token
 }
-
-// 注册
-func (userService *UserService) Register() {
-
-}
-
-// 生成token

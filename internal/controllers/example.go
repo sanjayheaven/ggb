@@ -17,6 +17,7 @@ type ExampleController struct{}
 // @Tags Example
 // @Param data body string true "data"
 // @Success 200 {object} object
+// @Security		BearerAuth
 func (exampleController *ExampleController) CreateExample(ctx *gin.Context) {
 	data := make(map[string]interface{})
 	if err := ctx.ShouldBindJSON(&data); err != nil {
@@ -36,6 +37,7 @@ func (exampleController *ExampleController) CreateExample(ctx *gin.Context) {
 // @Tags Example
 // @Param exampleId query int true "the example id" 22
 // @Success 200 {object} object
+// @Security		BearerAuth
 func (exampleController *ExampleController) GetExample(ctx *gin.Context) {
 	exampleIdStr := ctx.Query("exampleId")
 	exampleId, err := strconv.Atoi(exampleIdStr)
@@ -57,6 +59,7 @@ func (exampleController *ExampleController) GetExample(ctx *gin.Context) {
 // @Tags Example
 // @Param data body string true "data"
 // @Success 200 {object} object
+// @Security		BearerAuth
 func (exampleController *ExampleController) UpdateExample(ctx *gin.Context) {
 
 	data := make(map[string]interface{})
@@ -78,6 +81,7 @@ func (exampleController *ExampleController) UpdateExample(ctx *gin.Context) {
 // @Tags Example
 // @Param data body string true "data"
 // @Success 200 {object} object
+// @Security		BearerAuth
 func (exampleController *ExampleController) DeleteExample(ctx *gin.Context) {
 
 	data := make(map[string]interface{})
