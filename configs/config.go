@@ -13,6 +13,7 @@ type Config struct {
 	Redis  Redis
 	Server Server
 	Jwt    Jwt
+	Mongo  Mongo
 }
 
 var EnvConfig *Config

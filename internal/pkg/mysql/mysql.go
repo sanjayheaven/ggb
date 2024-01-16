@@ -30,9 +30,12 @@ func Connect(config *configs.Mysql) *gorm.DB {
 		DefaultStringSize: 256, // default size for string fields
 	}), &gorm.Config{})
 
+	if err != nil {
+		panic(`😫: Connected failed, check your Mysql with ` + address)
+	}
+
 	// Migrate the schema
 	migrateErr := db.AutoMigrate(&models.Example{}, &models.User{})
-
 	if migrateErr != nil {
 		panic(`😫: Auto migrate failed, check your Mysql with ` + address)
 	}
@@ -41,10 +44,6 @@ func Connect(config *configs.Mysql) *gorm.DB {
 	DB = db
 
 	logger.Printf(`🍟: Successfully connected to Mysql at ` + address)
-
-	if err != nil {
-		panic(`😫: Connected failed, check your Mysql with ` + address)
-	}
 
 	return db
 

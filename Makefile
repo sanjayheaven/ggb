@@ -38,6 +38,13 @@ clean:
 swagger:
 	swag init -g main.go -o api/swagger
 
+
+.PHONY: tidy
+# tidy the go modules
+tidy: 
+	go mod tidy
+
 .PHONY: all
 # default target
-all: goimports format lint
+all: goimports format lint tidy
+
