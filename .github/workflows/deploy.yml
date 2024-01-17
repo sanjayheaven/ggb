@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - "docs/go-gin-boilerplate/**"
+      - ".github/workflows/deploy.yml"
 
 permissions:
   contents: write
@@ -19,15 +20,14 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "18"
-          cache: yarn
 
       - name: Enter the directory
         run: cd docs/go-gin-boilerplate
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: npm install
       - name: Build
-        run: yarn build
+        run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
