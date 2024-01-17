@@ -129,5 +129,10 @@ docker compose up -d
 
 - You can also sponsor a cup of coffee on [Ko-Fi](https://ko-fi.com/dorvan) or [Buy Me A Coffee](https://www.buymeacoffee.com/dorvan)
 
-  <a href='https://ko-fi.com/J3J1T95FG' target='_blank'><img style='border:0px;height: 40px !important;width: 145px !important;' src='https://storage.ko-fi.com/cdn/kofi2.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
-  <a href="https://www.buymeacoffee.com/dorvan" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 40px !important;width: 145px !important;" ></a>
+  <a href='https://ko-fi.com/J3J1T95FG' target='_blank'>
+  <img width="145" height="40" src='https://storage.ko-fi.com/cdn/kofi2.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' />
+  </a>
+
+  <a href="https://www.buymeacoffee.com/dorvan" target="_blank">
+  <img width="145" height="40" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" />
+  </a>

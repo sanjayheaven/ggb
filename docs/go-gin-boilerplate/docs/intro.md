@@ -1,8 +1,12 @@
+---
+sidebar_position: 1
+---
+
 # Go Gin Boilerplate
 
 <div>
 
-<img src="./assets/golang.png" align="right"/>
+<img src="/img/golang.png" align="right"/>
 
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/sanjayheaven/go-gin-boilerplate)
 ![CI](https://github.com/sanjayheaven/go-gin-boilerplate/workflows/Go/badge.svg)
@@ -15,9 +19,6 @@
 ## 项目介绍
 
 一个基于 Gin 框架的开发脚手架，旨在帮助开发者快速搭建和开发 Web 应用程序。
-
-- [English](./README_en.md)
-- [中文介绍](./README.md)
 
 ## 关键词
 
