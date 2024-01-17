@@ -9,7 +9,9 @@ on:
       - ".github/workflows/deploy.yml"
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build:
@@ -30,7 +32,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./build
+          path: ./docs/go-gin-boilerplate/build
 
   # Deployment job
   deploy:

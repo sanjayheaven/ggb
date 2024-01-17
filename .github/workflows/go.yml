@@ -3,7 +3,16 @@ name: Go
 on:
   push:
     branches: ["main"]
-    paths-ignore: ["README.*", "LICENSE", "assets/**"]
+    paths-ignore:
+      [
+        "README.*",
+        "LICENSE",
+        "assets/**",
+        "docs/**",
+        ".github/**",
+        ".gitignore",
+        ".air.toml",
+      ]
   workflow_dispatch:
 
 jobs:
