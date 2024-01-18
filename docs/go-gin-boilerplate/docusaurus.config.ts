@@ -12,7 +12,7 @@ const config: Config = {
   url: "https://sanjayheaven.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/",
+  baseUrl: "/go-gin-boilerplate/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -63,7 +63,7 @@ const config: Config = {
       title: "Go Gin Boilerplate",
       logo: {
         alt: "My Site Logo",
-        src: "img/golang.png",
+        src: "../img/golang.png",
       },
       items: [
         {
