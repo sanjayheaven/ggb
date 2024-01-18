@@ -12,7 +12,7 @@ const config: Config = {
   url: "https://sanjayheaven.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/",
+  baseUrl: "/go-gin-boilerplate/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -69,13 +69,14 @@ const config: Config = {
           type: "docSidebar",
           sidebarId: "tutorialSidebar",
           position: "left",
-          label: "文档",
+          label: "使用文档",
         },
         // { to: "/blog", label: "Blog", position: "left" },
         {
           href: "https://github.com/sanjayheaven/go-gin-boilerplate",
-          label: "GitHub",
           position: "right",
+          className: "header-github-link",
+          "aria-label": "GitHub repository",
         },
       ],
     },
