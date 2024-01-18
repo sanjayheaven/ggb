@@ -15,7 +15,6 @@ permissions:
 
 jobs:
   build:
-    name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -30,9 +29,9 @@ jobs:
           npm run build
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v2
         with:
-          path: ./docs/go-gin-boilerplate/build
+          path: docs/go-gin-boilerplate/build
 
   # Deployment job
   deploy:
