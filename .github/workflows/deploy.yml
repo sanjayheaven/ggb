@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - docs
     paths:
       - "docs/go-gin-boilerplate/**"
       - ".github/workflows/deploy.yml"
