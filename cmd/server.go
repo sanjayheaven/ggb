@@ -3,7 +3,6 @@ package cmd
 import (
 	config "go-gin-boilerplate/configs"
 	"go-gin-boilerplate/internal/pkg/logger"
-	"go-gin-boilerplate/internal/pkg/mongo"
 	"go-gin-boilerplate/internal/pkg/mysql"
 	"go-gin-boilerplate/internal/pkg/redis"
 	routes "go-gin-boilerplate/internal/router"
@@ -49,17 +48,13 @@ func start() {
 	}
 
 	// init logger
-	logger.Init()
-	logger := logger.Logger
+	logger := logger.LogrusLogger
 
 	// load env config
-	config.LoadConfig()
 	EnvConfig := config.EnvConfig
 
 	// connect database
 	mysql.Connect(&EnvConfig.Mysql)
-	// connect mongo
-	mongo.Connect(&EnvConfig.Mongo)
 	// connect redis
 	redis.Connect(&EnvConfig.Redis)
 

@@ -2,7 +2,6 @@ package configs
 
 import (
 	"fmt"
-	"log"
 	"os"
 
 	"github.com/spf13/viper"
@@ -24,11 +23,10 @@ func LoadConfig() *Config {
 	if err != nil {
 		panic(err)
 	}
-	log.Println(path)
 
 	viper.SetConfigName("config")
 	viper.SetConfigType("yaml")
-	viper.AddConfigPath(path + "/configs")
+	viper.AddConfigPath(path + "/configs") // path to look for the config file in
 
 	if err := viper.ReadInConfig(); err != nil { // Handle errors reading the config file
 		panic(fmt.Errorf("fatal error config file: %w", err))
@@ -39,8 +37,10 @@ func LoadConfig() *Config {
 		panic(err)
 	}
 
-	// export config
-	EnvConfig = config
-
 	return config
+}
+
+func init() {
+	EnvConfig = LoadConfig()
+	fmt.Printf("👻 EnvConfig: %+v\n", EnvConfig)
 }

@@ -9,12 +9,7 @@ import (
 	"gopkg.in/natefinch/lumberjack.v2"
 )
 
-var (
-	ZapLogger *zap.Logger
-	ZapSugar  *zap.SugaredLogger
-)
-
-func InitZapLogger() {
+func InitZapLogger() *zap.Logger {
 
 	encoder := getEncoder()
 
@@ -41,8 +36,9 @@ func InitZapLogger() {
 	coreArr := []zapcore.Core{core, errorCore}
 
 	// export
-	ZapLogger = zap.New(zapcore.NewTee(coreArr...), zap.AddCaller()) // zap.AddCaller() will add line number and file name
-	ZapSugar = ZapLogger.Sugar()
+	zapLogger := zap.New(zapcore.NewTee(coreArr...), zap.AddCaller()) // zap.AddCaller() will add line number and file name
+	return zapLogger
+
 }
 
 func getEncoder() zapcore.Encoder {

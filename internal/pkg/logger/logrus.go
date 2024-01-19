@@ -8,11 +8,7 @@ import (
 	"gopkg.in/natefinch/lumberjack.v2"
 )
 
-var Logger *logrus.Logger
-
-var LogrusLogger *logrus.Logger
-
-func Init() *logrus.Logger {
+func InitLogrusLogger() *logrus.Logger {
 	logger := logrus.New()
 
 	logger.SetLevel(logrus.TraceLevel)
@@ -28,9 +24,6 @@ func Init() *logrus.Logger {
 	// multi writer, both file and stdout
 	writers := []io.Writer{logFile, os.Stdout}
 	logger.SetOutput(io.MultiWriter(writers...))
-
-	// export Logger
-	LogrusLogger = logger
 
 	return logger
 }
