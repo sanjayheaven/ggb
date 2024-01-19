@@ -28,7 +28,7 @@ const config: Config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: "zh-Hans",
-    locales: ["zh-Hans"],
+    locales: ["zh-Hans", "en"],
   },
 
   presets: [
@@ -56,13 +56,17 @@ const config: Config = {
           priority: 0.5,
           filename: "sitemap.xml",
         },
-        // gtag: {},
+        gtag: { trackingID: "G-B19Q9X519X" },
       } satisfies Preset.Options,
     ],
   ],
 
   themeConfig: {
     // Replace with your project's social card
+    metadata: [
+      { name: "keywords", content: "gin boilerplate go-gin-boilerplate" },
+      { name: "twitter:card", content: "summary" },
+    ],
     image: "img/docusaurus-social-card.jpg",
     navbar: {
       title: "Go Gin Boilerplate",
@@ -75,6 +79,33 @@ const config: Config = {
           label: "使用文档",
         },
         // { to: "/blog", label: "Blog", position: "left" },
+        // { type: "localeDropdown", position: "right" },
+        {
+          label: "Support",
+          position: "right",
+          items: [
+            {
+              href: "https://github.com/sanjayheaven/go-gin-boilerplate",
+              label: "🌟 Star on GitHub",
+              target: "_blank",
+            },
+            {
+              href: "https://ko-fi.com/J3J1T95FG",
+              label: "☕️ Buy Me a Ko-fi",
+              target: "_blank",
+            },
+            {
+              href: "https://www.buymeacoffee.com/dorvan",
+              label: "☕️ Buy Me a Coffee",
+              target: "_blank",
+            },
+            {
+              href: "https://github.com/sanjayheaven/go-gin-boilerplate/issues/new",
+              label: "🆙 Help Improve",
+              target: "_blank",
+            },
+          ],
+        },
         {
           href: "https://github.com/sanjayheaven/go-gin-boilerplate",
           position: "right",
