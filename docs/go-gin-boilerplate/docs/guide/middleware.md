@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 2.3
 ---
 
 # 中间件
@@ -220,3 +220,9 @@ func Logger() gin.HandlerFunc {
     }
 }
 ```
+
+## 更多
+
+更多 Gin 中间件参考
+
+- [gin-contrib](https://github.com/orgs/gin-contrib/repositories?q=middleware&type=all&language=&sort=)

@@ -6,7 +6,7 @@ sidebar_position: 1
 
 <div>
 
-<img src="/img/golang.png" align="right"/>
+<img src="/go-gin-boilerplate/img/golang.png" align="right"/>
 
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/sanjayheaven/go-gin-boilerplate)
 ![CI](https://github.com/sanjayheaven/go-gin-boilerplate/workflows/Go/badge.svg)

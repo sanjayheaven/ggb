@@ -1,6 +1,7 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
+import { EnumChangefreq } from "sitemap";
 
 const config: Config = {
   title: "Go Gin Boilerplate",
@@ -32,7 +33,7 @@ const config: Config = {
 
   presets: [
     [
-      "classic",
+      "@docusaurus/preset-classic",
       {
         docs: {
           sidebarPath: "./sidebars.ts",
@@ -49,9 +50,13 @@ const config: Config = {
           editUrl:
             "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
-        theme: {
-          customCss: "./src/css/custom.css",
+        theme: { customCss: "./src/css/custom.css" },
+        sitemap: {
+          changefreq: EnumChangefreq.WEEKLY,
+          priority: 0.5,
+          filename: "sitemap.xml",
         },
+        // gtag: {},
       } satisfies Preset.Options,
     ],
   ],
