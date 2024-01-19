@@ -36,7 +36,6 @@ func Jwt() gin.HandlerFunc {
 		}
 
 		ctx.Next()
-
 	}
 
 }

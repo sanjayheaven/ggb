@@ -11,6 +11,7 @@ var (
 
 	LogrusLogger *logrus.Logger
 
+	// export Logger
 	Logger *logrus.Logger
 )
 

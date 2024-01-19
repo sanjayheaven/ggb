@@ -8,6 +8,7 @@ import (
 
 // Cors middleware
 func Cors() gin.HandlerFunc {
+
 	return cors.New(cors.Config{
 		AllowOrigins:     []string{"*"},
 		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
@@ -15,4 +16,5 @@ func Cors() gin.HandlerFunc {
 		ExposeHeaders:    []string{"Content-Length"},
 		AllowCredentials: true,
 	})
+
 }
