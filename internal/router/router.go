@@ -1,4 +1,4 @@
-package routes
+package router
 
 import (
 	"go-gin-boilerplate/internal/middlewares"
@@ -10,29 +10,24 @@ import (
 	_ "go-gin-boilerplate/api/swagger" // docs.go
 )
 
-func Init() (*gin.Engine, error) {
-	r := gin.Default()
+var Router *gin.Engine
 
-	// public := LoadPublicRoutes(r)
-	// api := r.Group("/api")
-	// {
-	// 	public
-	// }
+func init() {
+	Router = gin.Default()
+
+	// Global middlewares
+	Router.Use(middlewares.ErrorHandle())
+	Router.Use(middlewares.Cors())
 
 	// public routes, no auth required
-	LoadPublicRoutes(r)
+	LoadPublicRoutes(Router)
 
 	// user routes
-	LoadUserRoutes(r)
-
-	// Loading middlewares
-	middlewares.LoadMiddlewares(r)
+	LoadUserRoutes(Router)
 
 	// example routes
-	LoadExampleRoutes(r)
+	LoadExampleRoutes(Router)
 
 	// init swagger
-	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
-
-	return r, nil
+	Router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
 }

@@ -1,6 +1,7 @@
 package middlewares
 
 import (
+	"log"
 	"net/http"
 	"runtime/debug"
 
@@ -8,23 +9,29 @@ import (
 )
 
 // ErrorHandle is a middleware to handle panic
-func ErrorHandle(c *gin.Context) {
-	defer func() {
-		if err := recover(); err != nil {
-			// log error
+func ErrorHandle() gin.HandlerFunc {
+	return func(c *gin.Context) {
 
-			// print stack trace
-			debug.PrintStack()
+		defer func() {
+			if err := recover(); err != nil {
+				// log error
+				log.Println(err)
 
-			// return error response
-			c.JSON(http.StatusInternalServerError, gin.H{
-				"code":    http.StatusInternalServerError,
-				"message": "Internal Server Error",
-			})
+				// print stack trace
+				debug.PrintStack()
 
-			// abort request
-			c.Abort()
-		}
-	}()
-	c.Next()
+				// return error response
+				c.JSON(http.StatusInternalServerError, gin.H{
+					"code":    http.StatusInternalServerError,
+					"message": "Internal Server Error",
+				})
+
+				// abort request
+				c.Abort()
+			}
+		}()
+
+		c.Next()
+	}
+
 }

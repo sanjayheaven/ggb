@@ -1,11 +1,11 @@
 package cmd
 
 import (
-	config "go-gin-boilerplate/configs"
+	"go-gin-boilerplate/configs"
 	"go-gin-boilerplate/internal/pkg/logger"
 	"go-gin-boilerplate/internal/pkg/mysql"
 	"go-gin-boilerplate/internal/pkg/redis"
-	routes "go-gin-boilerplate/internal/router"
+	"go-gin-boilerplate/internal/router"
 
 	"net/http"
 
@@ -41,17 +41,14 @@ func init() {
 
 func start() {
 
-	// init routes
-	r, err := routes.Init()
-	if err != nil {
-		panic(err)
-	}
+	// init router
+	r := router.Router
 
 	// init logger
 	logger := logger.LogrusLogger
 
 	// load env config
-	EnvConfig := config.EnvConfig
+	EnvConfig := configs.EnvConfig
 
 	// connect database
 	mysql.Connect(&EnvConfig.Mysql)

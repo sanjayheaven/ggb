@@ -1,4 +1,4 @@
-package routes
+package router
 
 import (
 	"go-gin-boilerplate/internal/controllers"
