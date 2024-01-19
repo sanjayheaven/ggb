@@ -9,17 +9,17 @@ const config: Config = {
   favicon: "img/golang.png",
 
   // Set the production url of your site here
-  url: "https://sanjayheaven.github.io",
+  url: "https://sanjayheaven.github.io/",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/go-gin-boilerplate/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "facebook", // Usually your GitHub org/user name.
+  organizationName: "sanjayheaven", // Usually your GitHub org/user name.
   projectName: "go-gin-boilerplate", // Usually your repo name.
 
-  onBrokenLinks: "throw",
+  onBrokenLinks: "ignore",
   onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internationalization, you can use this field to set
@@ -61,10 +61,7 @@ const config: Config = {
     image: "img/docusaurus-social-card.jpg",
     navbar: {
       title: "Go Gin Boilerplate",
-      logo: {
-        alt: "My Site Logo",
-        src: "../img/golang.png",
-      },
+      logo: { alt: "Logo", src: "img/golang.png" },
       items: [
         {
           type: "docSidebar",
