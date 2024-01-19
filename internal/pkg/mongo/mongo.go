@@ -16,7 +16,7 @@ var DB *gorm.DB
 
 func Connect(config *configs.Mongo) {
 
-	logger := logger.Logger
+	logger := logger.LogrusLogger
 
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()

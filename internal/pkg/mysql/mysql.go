@@ -14,7 +14,7 @@ var DB *gorm.DB
 
 func Connect(config *configs.Mysql) *gorm.DB {
 
-	logger := logger.Logger
+	logger := logger.LogrusLogger
 
 	address := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=True&loc=Local",
 		config.User,

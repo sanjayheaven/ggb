@@ -10,13 +10,11 @@ var (
 	ZapSugar  *zap.SugaredLogger
 
 	LogrusLogger *logrus.Logger
-
-	// export Logger
-	Logger *logrus.Logger
 )
 
 func init() {
-	Logger = InitLogrusLogger()
+	LogrusLogger = InitLogrusLogger()
 
-	LogrusLogger = Logger
+	// ZapLogger = InitZapLogger()
+	// ZapSugar = ZapLogger.Sugar()
 }

@@ -10,7 +10,7 @@ import (
 
 func Connect(config *configs.Redis) *redis.Client {
 
-	logger := logger.Logger
+	logger := logger.LogrusLogger
 
 	address := fmt.Sprintf("%s:%d", config.Host, config.Port)
 

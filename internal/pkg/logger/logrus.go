@@ -13,7 +13,6 @@ func InitLogrusLogger() *logrus.Logger {
 
 	logger.SetLevel(logrus.TraceLevel)
 	logger.SetFormatter(&logrus.JSONFormatter{})
-	// logger.SetReportCaller(true)
 
 	logFile := &lumberjack.Logger{
 		Filename: "logs/app.log",
