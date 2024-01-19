@@ -34,6 +34,8 @@ go mod download
 
 ## 创建 githooks 软链接【推荐】
 
+通过创建软链接，可以在每次提交代码时，自动运行 `pre-commit` 和 `commit-msg` 钩子，从而实现自动化测试和规范化提交信息。
+
 进入 `.git/hooks` 目录
 
 ```sh
@@ -43,7 +45,7 @@ cd .git/hooks
 建立软链接
 
 ```sh
-ln -s ../../githooks/\* .
+ln -s ../../githooks/* .
 ```
 
 ### 提示
@@ -52,11 +54,13 @@ ln -s ../../githooks/\* .
 >
 > 运行以下命令：
 >
+> 现在你的当前目录位置应该在 .git/hooks 目录下
+>
 > ```sh
-> ls -l . # 现在你的当前目录位置应该在 .git/hooks 目录下
+> ls -l .
 > ```
 >
-> 如果成功，你将会看到类似输出，包含以下内容：
+> 如果成功，你将会看到类似输出会包含以下内容：
 >
 > ```sh
 > commit-msg -> ../../githooks/commit-msg
