@@ -8,18 +8,21 @@
 ![CI](https://github.com/sanjayheaven/go-gin-boilerplate/workflows/Go/badge.svg)
 ![License](https://img.shields.io/github/license/sanjayheaven/go-gin-boilerplate)
 
-[Swagger Api Document](https://go-gin-boilerplate.gganbu.services/swagger/index.html)
+## 📘 Documents
+
+- [Project Document](https://sanjayheaven.github.io/go-gin-boilerplate/)
+- [Swagger Api Document](https://go-gin-boilerplate.gganbu.services/swagger/index.html)
 
 </div>
 
-## Introduction
+## 🎬 Introduction
 
 A development boilerplate based on the Gin framework, aimed at helping developers quickly build and develop web applications.
 
 - [English](./README_en.md)
 - [中文介绍](./README.md)
 
-## Keywords
+## 👀 Keywords
 
 [Go](https://github.com/golang/go)
 [Gin](https://github.com/gin-gonic/gin)
@@ -30,9 +33,10 @@ A development boilerplate based on the Gin framework, aimed at helping developer
 [Air](https://github.com/cosmtrek/air)
 [Logrus](https://github.com/sirupsen/logrus)
 [Lumberjack](https://github.com/natefinch/lumberjack)
+[Zap](https://github.com/uber-go/zap)
 [Jwt](https://github.com/golang-jwt/jwt)
 
-## Features
+## ✨ Features
 
 - **Rapid Development**: Accelerate project development and iteration using the **Gin** framework and related tools.
 - **Simple and Easy to Use**: Follow the [project-layout](https://github.com/golang-standards/project-layout/tree/master) specification, providing a clear and simple code structure that even beginners can easily understand.
@@ -41,8 +45,9 @@ A development boilerplate based on the Gin framework, aimed at helping developer
 - **Integrated Logging System**: Integrated Logrus and Lumberjack for comprehensive log recording and management.
 - **Database Support**: Integrated Gorm, supporting mainstream databases such as MySQL, PostgreSQL, etc.
 - **Flexible Middleware**: Incorporate common middleware for easy implementation of features such as logging, authentication, cross-origin resource sharing (CORS), rate limiting, etc.
+- **API Document**: Use **Gin-Swagger** to generate API documents for easy viewing and debugging of interfaces.
 
-## Quick Start
+## 🚀 Quick Start
 
 ```sh
 git clone https://github.com/sanjayheaven/go-gin-boilerplate.git
@@ -102,7 +107,20 @@ air
 go run main.go server
 ```
 
-## Deployment
+<!--
+## 🔨 打包
+
+```sh
+make build
+``` -->
+
+## 🔨 Build
+
+```sh
+make build
+```
+
+## 🪤 Deployment
 
 ### docker-compose
 
@@ -116,7 +134,7 @@ Ensure that Docker is installed on the server, and you are familiar with the usa
 docker compose up -d
 ```
 
-## Support 🫶
+## 🤝 Support
 
 - Star 🌟 the project
 - Welcome to submit [issue](https://github.com/sanjayheaven/go-gin-boilerplate/issues). Thank you for your support

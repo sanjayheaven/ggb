@@ -50,7 +50,9 @@ const config: Config = {
           editUrl:
             "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
-        theme: { customCss: "./src/css/custom.css" },
+        theme: {
+          customCss: ["./src/css/custom.css", "./src/css/tailwind.css"],
+        },
         sitemap: {
           changefreq: EnumChangefreq.WEEKLY,
           priority: 0.5,
@@ -114,51 +116,48 @@ const config: Config = {
         },
       ],
     },
-    // footer: {
-    //   style: "dark",
-    //   links: [
-    //     {
-    //       title: "Docs",
-    //       items: [
-    //         {
-    //           label: "Tutorial",
-    //           to: "/docs/intro",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       title: "Community",
-    //       items: [
-    //         {
-    //           label: "Stack Overflow",
-    //           href: "https://stackoverflow.com/questions/tagged/docusaurus",
-    //         },
-    //         {
-    //           label: "Discord",
-    //           href: "https://discordapp.com/invite/docusaurus",
-    //         },
-    //         {
-    //           label: "Twitter",
-    //           href: "https://twitter.com/docusaurus",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       title: "More",
-    //       items: [
-    //         {
-    //           label: "Blog",
-    //           to: "/blog",
-    //         },
-    //         {
-    //           label: "GitHub",
-    //           href: "https://github.com/facebook/docusaurus",
-    //         },
-    //       ],
-    //     },
-    //   ],
-    //   copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
-    // },
+    footer: {
+      style: "dark",
+      links: [
+        {
+          title: "Docs",
+          items: [
+            { label: "Tutorial", to: "/docs/intro" },
+            {
+              label: "Swagger",
+              to: "https://go-gin-boilerplate.gganbu.services/swagger/index.html",
+            },
+          ],
+        },
+        {
+          title: "Community",
+          items: [
+            {
+              label: "GitHub",
+              href: "https://github.com/sanjayheaven/go-gin-boilerplate",
+            },
+            // {
+            //   label: "Discord",
+            //   href: "https://discordapp.com/invite/docusaurus",
+            // },
+          ],
+        },
+        {
+          title: "More",
+          items: [
+            {
+              label: "Dorvan's Blog",
+              to: "https://blog.hdxsanjay.com",
+            },
+            // {
+            //   label: "GitHub",
+            //   href: "https://github.com/facebook/docusaurus",
+            // },
+          ],
+        },
+      ],
+      copyright: `Copyright © ${new Date().getFullYear()} Dorvan, Inc. Built with Docusaurus.`,
+    },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
