@@ -8,18 +8,21 @@
 ![CI](https://github.com/sanjayheaven/go-gin-boilerplate/workflows/Go/badge.svg)
 ![License](https://img.shields.io/github/license/sanjayheaven/go-gin-boilerplate)
 
-[Swagger 接口文档](https://go-gin-boilerplate.gganbu.services/swagger/index.html)
+## 📘 Documents
+
+- [项目文档](https://sanjayheaven.github.io/go-gin-boilerplate/)
+- [Swagger 接口文档](https://go-gin-boilerplate.gganbu.services/swagger/index.html)
 
 </div>
 
-## 项目介绍
+## 🎬 项目介绍
 
 一个基于 Gin 框架的开发脚手架，旨在帮助开发者快速搭建和开发 Web 应用程序。
 
 - [English](./README_en.md)
 - [中文介绍](./README.md)
 
-## 关键词
+## 👀 关键词
 
 [Go](https://github.com/golang/go)
 [Gin](https://github.com/gin-gonic/gin)
@@ -30,9 +33,10 @@
 [Air](https://github.com/cosmtrek/air)
 [Logrus](https://github.com/sirupsen/logrus)
 [Lumberjack](https://github.com/natefinch/lumberjack)
+[Zap](https://github.com/uber-go/zap)
 [Jwt](https://github.com/golang-jwt/jwt)
 
-## 特性
+## ✨ 特性
 
 - **快速开发**: 使用 **Gin** 框架和相关工具，加速项目的开发和迭代过程。
 - **简单易用**: 遵循 [project-layout](https://github.com/golang-standards/project-layout/tree/master) 规范, 提供清晰简单的代码结构，使新手也能轻松上手。
@@ -41,9 +45,12 @@
 - **一体化日志系统**: 集成 **Logrus** 和 **Lumberjack**, 实现全方位的日志记录和管理。
 - **数据库支持**: 集成 **Gorm**, 支持主流数据库，如 MySQL、PostgreSQL 等。
 - **灵活的中间件**: 整合常用中间件，轻松实现日志、认证、跨域、限流等功能。
-<!-- - **统一错误处理**: 统一的错误处理机制，简化错误信息的捕获和处理。 -->
+- **API 文档**: 使用 **Gin-Swagger** 生成 API 文档，方便查看和调试接口。
 
-## 快速开始
+    <!-- 我用了swag生成文档，非常方便用于调试  -->
+  <!-- - **统一错误处理**: 统一的错误处理机制，简化错误信息的捕获和处理。 -->
+
+## 🚀 快速开始
 
 ```sh
 git clone https://github.com/sanjayheaven/go-gin-boilerplate.git
@@ -103,13 +110,13 @@ air
 go run main.go server
 ```
 
-## 打包
+## 🔨 打包
 
 ```sh
 make build
 ```
 
-## 部署
+## 🪤 部署
 
 ### docker-compose
 
@@ -123,7 +130,7 @@ make build
 docker compose up -d
 ```
 
-## 支持 🫶
+## 🤝 支持
 
 - Star 🌟 项目
 - 欢迎提交 [issue](https://github.com/sanjayheaven/go-gin-boilerplate/issues)。感谢您的支持
