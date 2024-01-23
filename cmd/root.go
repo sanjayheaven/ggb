@@ -11,7 +11,6 @@ var rootCmd = &cobra.Command{
 	Use:   "ggb",
 	Short: "Go-Gin-Boilerplate is a development boilerplate based on the Gin framework, aimed at helping developers quickly build and develop web applications.",
 	Run: func(cmd *cobra.Command, args []string) {
-		// Do Stuff Here
 		fmt.Printf("%s\n", "Welcome to Go-Gin-Boilerplate. Use -h to see more commands")
 	},
 }
@@ -19,7 +18,12 @@ var rootCmd = &cobra.Command{
 var Verbose bool
 
 // You will additionally define flags and handle configuration in your init() function.
-func init() {}
+func init() {
+
+	rootCmd.AddCommand(ServerStartCmd) // add server start command
+	rootCmd.AddCommand(VersionCmd)     // add version command
+	rootCmd.AddCommand(NewCmd)         // add new command
+}
 
 func Execute() {
 	if err := rootCmd.Execute(); err != nil {

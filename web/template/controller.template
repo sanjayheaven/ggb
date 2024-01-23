@@ -1,0 +1,113 @@
+// go:generate go run main.go new module {{.ModuleName}}
+
+package controllers
+
+import (
+	"go-gin-boilerplate/internal/services"
+	"net/http"
+	"strconv"
+
+	"github.com/gin-gonic/gin"
+)
+
+var {{.ModuleName}}Service = new(services.{{.ModuleNameUpperFirst}}Service)
+
+type {{.ModuleNameUpperFirst}}Controller struct{}
+
+// @Router /{{.ModuleNamePlural}}/create{{.ModuleNameUpperFirst}} [post]
+// @Description Create {{.ModuleNameUpperFirst}}
+// @Tags {{.ModuleNameUpperFirst}}
+// @Param data body string true "data"
+// @Success 200 {object} object
+// @Security		BearerAuth
+func ({{.ModuleName}}Controller *{{.ModuleNameUpperFirst}}Controller) Create{{.ModuleNameUpperFirst}}(ctx *gin.Context) {
+	data := make(map[string]interface{})
+	if err := ctx.ShouldBindJSON(&data); err != nil {
+		ctx.JSON(http.StatusBadRequest, gin.H{"code": http.StatusBadRequest, "message": err.Error()})
+		return
+	}
+	res := {{.ModuleName}}Service.Create{{.ModuleNameUpperFirst}}(data)
+	if res == nil {
+		ctx.JSON(http.StatusInternalServerError, gin.H{"code": http.StatusInternalServerError, "message": "Internal Server Error"})
+		return
+	}
+	ctx.JSON(http.StatusOK, res)
+}
+
+// @Router /{{.ModuleNamePlural}}/get{{.ModuleNameUpperFirst}} [get]
+// @Description Get {{.ModuleNameUpperFirst}}
+// @Tags {{.ModuleNameUpperFirst}}
+// @Param {{.ModuleName}}Id query int true "the {{.ModuleName}} id" 22
+// @Success 200 {object} object
+// @Security		BearerAuth
+func ({{.ModuleName}}Controller *{{.ModuleNameUpperFirst}}Controller) Get{{.ModuleNameUpperFirst}}(ctx *gin.Context) {
+	{{.ModuleName}}IdStr := ctx.Query("{{.ModuleName}}Id")
+	{{.ModuleName}}Id, err := strconv.Atoi({{.ModuleName}}IdStr)
+	if err != nil {
+		ctx.JSON(http.StatusBadRequest, gin.H{"code": http.StatusBadRequest, "message": "error param"})
+		return
+	}
+
+	res := {{.ModuleName}}Service.Get{{.ModuleNameUpperFirst}}({{.ModuleName}}Id)
+	if res == nil {
+		ctx.JSON(http.StatusNotFound, gin.H{"code": http.StatusNotFound, "message": "Not Found"})
+		return
+	}
+	ctx.JSON(http.StatusOK, res)
+}
+
+// @Router /{{.ModuleNamePlural}}/update{{.ModuleNameUpperFirst}} [post]
+// @Description Update {{.ModuleNameUpperFirst}}
+// @Tags {{.ModuleNameUpperFirst}}
+// @Param data body string true "data"
+// @Success 200 {object} object
+// @Security		BearerAuth
+func ({{.ModuleName}}Controller *{{.ModuleNameUpperFirst}}Controller) Update{{.ModuleNameUpperFirst}}(ctx *gin.Context) {
+
+	data := make(map[string]interface{})
+	if err := ctx.ShouldBindJSON(&data); err != nil {
+		ctx.JSON(http.StatusBadRequest, gin.H{"code": http.StatusBadRequest, "message": err.Error()})
+		return
+	}
+	res := {{.ModuleName}}Service.Update{{.ModuleNameUpperFirst}}(data)
+	if !res {
+		ctx.JSON(http.StatusInternalServerError, gin.H{"code": http.StatusInternalServerError, "message": "Internal Server Error"})
+		return
+	}
+	ctx.JSON(http.StatusOK, gin.H{"code": http.StatusOK, "message": "success"})
+
+}
+
+// @Router /{{.ModuleNamePlural}}/delete{{.ModuleNameUpperFirst}} [post]
+// @Description Delete {{.ModuleNameUpperFirst}}
+// @Tags {{.ModuleNameUpperFirst}}
+// @Param data body string true "data"
+// @Success 200 {object} object
+// @Security		BearerAuth
+func ({{.ModuleName}}Controller *{{.ModuleNameUpperFirst}}Controller) Delete{{.ModuleNameUpperFirst}}(ctx *gin.Context) {
+
+	data := make(map[string]interface{})
+	if err := ctx.ShouldBindJSON(&data); err != nil {
+		ctx.JSON(http.StatusBadRequest, gin.H{"code": http.StatusBadRequest, "message": err.Error()})
+		return
+	}
+	{{.ModuleName}}IdStr := data["{{.ModuleName}}Id"].(string)
+	if {{.ModuleName}}IdStr == "" {
+		ctx.JSON(http.StatusBadRequest, gin.H{"code": http.StatusBadRequest, "message": "error param"})
+		return
+	}
+
+	{{.ModuleName}}Id, err := strconv.Atoi({{.ModuleName}}IdStr)
+	if err != nil {
+		ctx.JSON(http.StatusBadRequest, gin.H{"code": http.StatusBadRequest, "message": "error param"})
+		return
+	}
+
+	res := {{.ModuleName}}Service.Delete{{.ModuleNameUpperFirst}}({{.ModuleName}}Id)
+	if !res {
+		ctx.JSON(http.StatusInternalServerError, gin.H{"code": http.StatusInternalServerError, "message": "Internal Server Error"})
+		return
+	}
+	ctx.JSON(http.StatusOK, gin.H{"code": http.StatusOK, "message": "success"})
+
+}
