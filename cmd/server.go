@@ -19,14 +19,12 @@ import (
 )
 
 var (
-	// host           string
-	// port           uint
+	host           string
+	port           int
 	ServerStartCmd = &cobra.Command{
 		Use:   "server",
 		Short: `Start the server`,
 		Run: func(cmd *cobra.Command, args []string) {
-			// Do Stuff Here
-			// log.Println("Hello World!")
 			start()
 		},
 	}
@@ -35,19 +33,21 @@ var (
 func init() {
 
 	// ServerStartCmd.Flags().StringVarP(&host, "host", "H", "127.0.0.1", "HTTP server host") // server host
-	// ServerStartCmd.Flags().UintVarP(&port, "port", "p", 8080, "HTTP server port")          // server port
-	rootCmd.AddCommand(ServerStartCmd) // add server start command
+	// ServerStartCmd.Flags().IntVarP(&port, "port", "p", 8080, "Http server port")           // server port
 }
 
 func start() {
 
 	// init router
+	router.Init()
 	r := router.Router
 
 	// init logger
+	logger.Init()
 	logger := logger.LogrusLogger
 
 	// load env config
+	configs.Init()
 	EnvConfig := configs.EnvConfig
 
 	// connect database

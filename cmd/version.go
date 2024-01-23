@@ -15,7 +15,3 @@ var VersionCmd = &cobra.Command{
 		fmt.Printf(`Go-Gin-Boilerplate version: %v`, "v0.0.1")
 	},
 }
-
-func init() {
-	rootCmd.AddCommand(VersionCmd) // add version command
-}

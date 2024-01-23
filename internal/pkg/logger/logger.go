@@ -12,7 +12,7 @@ var (
 	LogrusLogger *logrus.Logger
 )
 
-func init() {
+func Init() {
 	LogrusLogger = InitLogrusLogger()
 
 	// ZapLogger = InitZapLogger()
