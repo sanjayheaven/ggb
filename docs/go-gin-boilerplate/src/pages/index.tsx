@@ -166,7 +166,7 @@ export default function Home(): JSX.Element {
             Why use this boilerplate?
           </div>
 
-          <div className=" sm:max-w-[50%] md:grid grid-cols-3 justify-items-center w-max mx-auto gap-6">
+          <div className=" md:grid grid-cols-3 justify-items-center w-max mx-auto gap-6">
             {features.map((item) => {
               return (
                 <div

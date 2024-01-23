@@ -164,6 +164,10 @@
   display: flex;
 }
 
+.grid {
+  display: grid;
+}
+
 .h-10 {
   height: 2.5rem;
 }
@@ -445,6 +449,10 @@ html[data-theme="dark"] .header-github-link:before {
 }
 
 @media (min-width: 640px) {
+  .sm\:grid {
+    display: grid;
+  }
+
   .sm\:w-\[200px\] {
     width: 200px;
   }
@@ -459,6 +467,14 @@ html[data-theme="dark"] .header-github-link:before {
 
   .sm\:max-w-\[50\%\] {
     max-width: 50%;
+  }
+
+  .sm\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .sm\:p-8 {
@@ -499,6 +515,26 @@ html[data-theme="dark"] .header-github-link:before {
 @media (min-width: 768px) {
   .md\:grid {
     display: grid;
+  }
+
+  .md\:max-w-\[50\%\] {
+    max-width: 50%;
+  }
+
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:max-w-\[50\%\] {
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:max-w-\[50\%\] {
+    max-width: 50%;
   }
 }
 
