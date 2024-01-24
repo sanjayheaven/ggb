@@ -44,29 +44,61 @@ export default function Home(): JSX.Element {
       title={`Hello from ${siteConfig.title}`}
       description="A boilerplate for Go Gin Web Framework."
     >
-      <div className=" py-20 bg-theme">
-        <div className=" text-5xl font-bold text-center">
-          {siteConfig.title}
-          <img src="img/golang.png" alt="" className="h-10 ml-2" />
+      <div className=" py-20 bg-gradient-to-tr from-indigo-100 to-white dark:bg-none">
+        <div className=" px-4 sm:px-10">
+          <div className=" text-4xl sm:text-5xl font-bold text-center">
+            Develop. Fast. First.
+          </div>
+
+          <div className=" mt-10 mb-10 text-xl sm:text-2xl text-center">
+            <div className="text-3xl sm:text-4xl font-bold mb-8">
+              {siteConfig.title}
+              <img src="img/golang.png" alt="" className="h-10 ml-2" />
+            </div>
+            <div className=" sm:max-w-[50%] text-center mx-auto">
+              A development boilerplate based on the Gin framework, aimed at
+              helping developers quickly build and develop web applications.
+            </div>
+            <div className=" mt-4 flex items-center gap-4 mx-auto justify-center">
+              <img
+                onClick={() =>
+                  window.open(
+                    "https://github.com/sanjayheaven/go-gin-boilerplate"
+                  )
+                }
+                src="https://img.shields.io/github/stars/sanjayheaven/go-gin-boilerplate"
+                alt=""
+                className=" h-6 cursor-pointer"
+              />
+
+              <img
+                onClick={() =>
+                  window.open(
+                    "https://github.com/sanjayheaven/go-gin-boilerplate"
+                  )
+                }
+                src="https://github.com/sanjayheaven/go-gin-boilerplate/workflows/Go/badge.svg"
+                alt=""
+                className=" h-6 cursor-pointer"
+              />
+            </div>
+            {/* {siteConfig.tagline} */}
+          </div>
         </div>
 
-        <div className=" mt-10 mb-16 text-2xl text-center">
-          {siteConfig.tagline}
-        </div>
-
-        <div className=" flex items-center justify-center gap-6 ">
+        <div className=" flex flex-wrap items-center justify-center gap-6 mx-auto px-2 sm:px-10">
           <div
-            className=" w-[200px] hover:shadow-md cursor-pointer py-4 px-10 font-bold text-2xl 
+            className=" box-border sm:w-[200px] sm:max-w-[200px] hover:shadow-xl cursor-pointer py-3 sm:py-4 px-4 sm:px-6 font-bold text-2xl 
           transition-all duration-300 bg-white rounded-md text-black no-underline
-          min-w-max text-center"
+          min-w-[170px] sm:min-w-max text-center"
             onClick={() => (window.location.href = "docs/intro")}
           >
             Get Started
           </div>
           <div
-            className=" w-[200px] hover:shadow-md cursor-pointer py-4 px-10 font-bold text-2xl 
+            className=" box-border sm:w-[200px] sm:max-w-[200px] hover:shadow-xl cursor-pointer py-3 sm:py-4 px-4 sm:px-10 font-bold text-2xl 
           transition-all duration-300 bg-white rounded-md text-black no-underline
-          min-w-max text-center"
+          min-w-[170px] sm:min-w-max text-center"
             onClick={() =>
               window.open("https://github.com/sanjayheaven/go-gin-boilerplate")
             }
@@ -77,19 +109,71 @@ export default function Home(): JSX.Element {
       </div>
 
       <main>
-        {/*  */}
+        {/* quick start */}
         <div className=" my-20">
-          <div className=" text-4xl font-bold text-center mb-10">
+          <div className="text-3xl sm:text-4xl font-bold text-center mb-10">
+            Quick Start
+          </div>
+
+          <div className=" sm:max-w-[50%] mx-auto px-4">
+            <div>
+              <div className=" font-bold text-2xl mb-4">Installations</div>
+              <div className=" w-full flex items-center justify-center mx-auto gap-6">
+                <code
+                  lang="sh"
+                  className=" w-full p-4 sm:p-8 bg-[#2b303b] text-white"
+                >
+                  <div>
+                    git clone
+                    https://github.com/sanjayheaven/go-gin-boilerplate.git
+                  </div>
+                  <div>cd go-gin-boilerplate </div>
+                  <div>go mod download</div>
+                </code>
+              </div>
+            </div>
+            {/* config */}
+            <div className=" mt-8">
+              <div className=" font-bold text-2xl mb-4">Config Setup</div>
+              <div className=" w-full flex items-center justify-center mx-auto gap-6">
+                <code
+                  lang="sh"
+                  className=" w-full p-4 sm:p-8 bg-[#2b303b] text-white"
+                >
+                  <div>cp configs/config.example.yaml configs/config.yaml</div>
+                  <div>vi configs/config.yaml</div>
+                </code>
+              </div>
+            </div>
+            {/* run */}
+            <div className=" mt-8">
+              <div className=" font-bold text-2xl mb-4">Run Project</div>
+              <div className=" w-full flex items-center justify-center mx-auto gap-6">
+                <code
+                  lang="sh"
+                  className=" w-full p-4 sm:p-8 bg-[#2b303b] text-white"
+                >
+                  <div>go run main.go</div>
+                </code>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* why  */}
+        <div className=" my-20">
+          <div className="text-3xl sm:text-4xl font-bold text-center mb-10">
             Why use this boilerplate?
           </div>
-          <div className=" grid grid-cols-3 justify-items-center w-max mx-auto gap-6">
+
+          <div className=" md:grid grid-cols-3 justify-items-center w-max mx-auto gap-6">
             {features.map((item) => {
               return (
                 <div
                   key={item.title}
-                  className=" cursor-pointer shadow-lg rounded-lg w-[250px] p-8 transition-all duration-300"
+                  className=" hover:scale-110 max-w-max cursor-pointer shadow-lg rounded-lg w-[250px] p-8 transition-all duration-300"
                 >
-                  <div className=" font-bold ">{item.title}</div>
+                  <div className="font-bold ">{item.title}</div>
                   <div>{item.description}</div>
                 </div>
               );

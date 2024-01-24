@@ -8,7 +8,7 @@ sidebar_position: 1
 
 ## 要求
 
-- [Go](https://golang.org/) >= 1.16
+- [Go](https://golang.org/) >= 1.20
 
 ## 安装
 
