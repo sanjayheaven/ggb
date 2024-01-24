@@ -12,7 +12,7 @@ import (
 
 var Router *gin.Engine
 
-func init() {
+func Init() {
 	Router = gin.Default()
 
 	// Global middlewares

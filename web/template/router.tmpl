@@ -1,0 +1,24 @@
+package router
+
+import (
+	"go-gin-boilerplate/internal/controllers"
+	"go-gin-boilerplate/internal/middlewares"
+
+	"github.com/gin-gonic/gin"
+)
+
+var {{.ModuleName}}Controller = new(controllers.{{.ModuleNameUpperFirst}}Controller)
+
+func Load{{.ModuleNameUpperFirst}}Routes(r *gin.Engine) *gin.RouterGroup {
+
+	{{.ModuleName}} := r.Group("/{{.ModuleNamePlural}}")
+	{{.ModuleName}}.Use(middlewares.Jwt())
+
+	{
+		{{.ModuleName}}.POST("/create{{.ModuleNameUpperFirst}}", {{.ModuleName}}Controller.Create{{.ModuleNameUpperFirst}})
+		{{.ModuleName}}.GET("/get{{.ModuleNameUpperFirst}}", {{.ModuleName}}Controller.Get{{.ModuleNameUpperFirst}})
+		{{.ModuleName}}.POST("/update{{.ModuleNameUpperFirst}}", {{.ModuleName}}Controller.Update{{.ModuleNameUpperFirst}})
+		{{.ModuleName}}.POST("/delete{{.ModuleNameUpperFirst}}", {{.ModuleName}}Controller.Delete{{.ModuleNameUpperFirst}})
+	}
+	return {{.ModuleName}}
+}

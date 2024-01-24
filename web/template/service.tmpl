@@ -1,0 +1,57 @@
+package services
+
+import (
+	"go-gin-boilerplate/internal/models"
+)
+
+type {{.ModuleNameUpperFirst}}Service struct{}
+
+func ({{.ModuleName}}Service *{{.ModuleNameUpperFirst}}Service) Create{{.ModuleNameUpperFirst}}(data map[string]interface{}) *models.{{.ModuleNameUpperFirst}} {
+
+	{{.ModuleName}} := models.{{.ModuleNameUpperFirst}}{
+		Name: data["name"].(string),
+	}
+
+	res := db.Create(&{{.ModuleName}})
+	if res.Error != nil || res.RowsAffected == 0 {
+		return nil
+	}
+
+	return &{{.ModuleName}}
+
+}
+
+func ({{.ModuleName}}Service *{{.ModuleNameUpperFirst}}Service) Get{{.ModuleNameUpperFirst}}({{.ModuleName}}Id int) *models.{{.ModuleNameUpperFirst}} {
+
+	{{.ModuleName}} := models.{{.ModuleNameUpperFirst}}{}
+	res := db.First(&{{.ModuleName}}, {{.ModuleName}}Id).Select("id, name, status")
+
+	if res.Error != nil || res.RowsAffected == 0 {
+		return nil
+	}
+	return &{{.ModuleName}}
+}
+
+func ({{.ModuleName}}Service *{{.ModuleNameUpperFirst}}Service) Update{{.ModuleNameUpperFirst}}(data map[string]interface{}) bool {
+
+	{{.ModuleName}} := models.{{.ModuleNameUpperFirst}}{}
+	{{.ModuleName}}.ID = uint(data["{{.ModuleName}}Id"].(int))
+
+	res := db.Model(&{{.ModuleName}}).Updates(data)
+
+	if res.Error != nil || res.RowsAffected == 0 {
+		return false
+	}
+	return true
+}
+
+func ({{.ModuleName}}Service *{{.ModuleNameUpperFirst}}Service) Delete{{.ModuleNameUpperFirst}}({{.ModuleName}}Id int) bool {
+
+	{{.ModuleName}} := models.{{.ModuleNameUpperFirst}}{}
+	res := db.Delete(&{{.ModuleName}}, {{.ModuleName}}Id)
+
+	if res.Error != nil || res.RowsAffected == 0 {
+		return false
+	}
+	return true
+}

@@ -40,7 +40,6 @@ func LoadConfig() *Config {
 	return config
 }
 
-func init() {
+func Init() {
 	EnvConfig = LoadConfig()
-	fmt.Printf("👻 EnvConfig: %+v\n", EnvConfig)
 }

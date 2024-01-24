@@ -44,6 +44,13 @@ swagger:
 tidy: 
 	go mod tidy
 
+
+.PHONY: gt generate-template
+# generate template, THIS IS A DEV ONLY COMMAND DO NOT USE IN PRODUCTION
+gt: generate-template
+generate-template:
+	go run scripts/gen-tmpl.go
+
 .PHONY: all
 # default target
 all: goimports format lint tidy

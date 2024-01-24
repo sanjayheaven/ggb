@@ -1,5 +1,6 @@
 package configs
 
 type Server struct {
-	Port string
+	GinMode string
+	Port    string
 }
