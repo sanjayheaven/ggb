@@ -70,5 +70,9 @@ func GenTmpl(moduleName string) error {
 }
 
 func main() {
-	GenTmpl("example")
+	err := GenTmpl("example")
+	if err != nil {
+		fmt.Printf("Error generating template files: %v\n", err)
+		return
+	}
 }

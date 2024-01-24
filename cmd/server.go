@@ -19,8 +19,8 @@ import (
 )
 
 var (
-	host           string
-	port           int
+	// host           string
+	// port           int
 	ServerStartCmd = &cobra.Command{
 		Use:   "server",
 		Short: `Start the server`,
