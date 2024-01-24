@@ -3,6 +3,7 @@ package cmd
 import (
 	"errors"
 	"fmt"
+	"go-gin-boilerplate/tools"
 	"html/template"
 	"os"
 	"path/filepath"
@@ -10,18 +11,6 @@ import (
 
 	"github.com/spf13/cobra"
 )
-
-func getTemplate(templateType string) string {
-	templatePath := fmt.Sprintf("web/template/%s.template", templateType)
-
-	content, err := os.ReadFile(templatePath)
-	if err != nil {
-		fmt.Printf("Error reading template file: %v\n", err)
-		return ""
-	}
-
-	return string(content)
-}
 
 func createFile(filePath, templateContent, moduleName string) error {
 	tmpl, err := template.New("module").Parse(templateContent)
@@ -60,15 +49,15 @@ func createFile(filePath, templateContent, moduleName string) error {
 	return nil
 }
 
-var newProjectCmd = &cobra.Command{
-	Use:   "project [project name]",
-	Short: "Create a new project",
-	Args:  cobra.ExactArgs(1),
-	Run: func(cmd *cobra.Command, args []string) {
-		projectName := args[0]
-		fmt.Printf("Creating a new project: %s\n", projectName)
-	},
-}
+//	var newProjectCmd = &cobra.Command{
+//		Use:   "project [project name]",
+//		Short: "Create a new project",
+//		Args:  cobra.ExactArgs(1),
+//		Run: func(cmd *cobra.Command, args []string) {
+//			projectName := args[0]
+//			fmt.Printf("Creating a new project: %s\n", projectName)
+//		},
+//	}
 var newModuleCmd = &cobra.Command{
 	Use:   "module [module name]",
 	Short: "Create a new module for the project",
@@ -88,16 +77,16 @@ var newModuleCmd = &cobra.Command{
 			}
 		}
 
-		files := map[string]string{
-			filepath.Join(internalPath, "router", moduleName+".go"):      getTemplate("router"),
-			filepath.Join(internalPath, "controllers", moduleName+".go"): getTemplate("controller"),
-			filepath.Join(internalPath, "services", moduleName+".go"):    getTemplate("service"),
-			filepath.Join(internalPath, "models", moduleName+".go"):      getTemplate("model"),
+		fileTempaltes := map[string]string{
+			filepath.Join(internalPath, "models", moduleName+".go"):      tools.GetFile("web/template/model.tmpl"),
+			filepath.Join(internalPath, "services", moduleName+".go"):    tools.GetFile("web/template/service.tmpl"),
+			filepath.Join(internalPath, "controllers", moduleName+".go"): tools.GetFile("web/template/controller.tmpl"),
+			filepath.Join(internalPath, "router", moduleName+".go"):      tools.GetFile("web/template/router.tmpl"),
 		}
 
-		for filePath, fileContent := range files {
+		for filePath, templateContent := range fileTempaltes {
 			if _, err := os.Stat(filePath); os.IsNotExist(err) {
-				err := createFile(filePath, fileContent, moduleName)
+				err := createFile(filePath, templateContent, moduleName)
 				if err != nil {
 					fmt.Printf("Error creating file: %v\n", err)
 					return
@@ -126,7 +115,7 @@ var NewCmd = &cobra.Command{
 }
 
 func init() {
-	NewCmd.AddCommand(newProjectCmd, newModuleCmd)
+	NewCmd.AddCommand(newModuleCmd)
 }
 
 func run() {
