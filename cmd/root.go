@@ -15,11 +15,8 @@ var rootCmd = &cobra.Command{
 	},
 }
 
-var Verbose bool
-
 // You will additionally define flags and handle configuration in your init() function.
 func init() {
-
 	rootCmd.AddCommand(ServerStartCmd) // add server start command
 	rootCmd.AddCommand(VersionCmd)     // add version command
 	rootCmd.AddCommand(NewCmd)         // add new command

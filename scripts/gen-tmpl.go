@@ -10,8 +10,7 @@ import (
 	"regexp"
 )
 
-// var tmpl *template.Template
-
+// replaceStrings replace strings in input string according to the replacements map
 func replaceStrings(input string, replacements map[string]string) string {
 	for oldStr, newStr := range replacements {
 		re := regexp.MustCompile(oldStr)

@@ -26,3 +26,4 @@ config.yaml
 tmp
 logs
 build/*
+assets/.DS_Store
