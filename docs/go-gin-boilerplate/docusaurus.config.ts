@@ -66,8 +66,20 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     metadata: [
-      { name: "keywords", content: "gin boilerplate go-gin-boilerplate" },
+      { name: "title", content: "Go Gin Boilerplate" },
+      {
+        name: "description",
+        content: "A development boilerplate based on the Gin framework",
+      },
+      { name: "keywords", content: "go gin boilerplate go-gin-boilerplate" },
+
+      { property: "og:title", content: "Go Gin Boilerplate" },
+      { property: "og:image", content: "img/cover.png" },
+      { property: "og:type", content: "Go Gin Boilerplate" },
+
       { name: "twitter:card", content: "summary" },
+
+      // { name: "og:url", content: "https://github.com/sanjayheaven" },
     ],
     image: "img/docusaurus-social-card.jpg",
     navbar: {

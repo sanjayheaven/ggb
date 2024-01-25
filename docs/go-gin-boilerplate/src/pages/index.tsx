@@ -40,10 +40,7 @@ const features = [
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="A boilerplate for Go Gin Web Framework."
-    >
+    <Layout>
       <div className=" py-20 bg-gradient-to-tr from-indigo-100 to-white dark:bg-none">
         <div className=" px-4 sm:px-10">
           <div className=" text-4xl sm:text-5xl font-bold text-center">
