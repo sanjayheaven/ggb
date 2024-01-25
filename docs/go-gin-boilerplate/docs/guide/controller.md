@@ -30,8 +30,35 @@ func GetHello(c *gin.Context) {
 }
 ```
 
-### 参数校验
+<!-- ### 参数校验 -->
 
 ## 服务调用
 
-## 返回响应
+在控制器中，我们可以调用服务层，进行业务处理。
+
+```go
+
+type ExampleController struct{}
+
+func (exampleController *ExampleController) GetExample(ctx *gin.Context) {
+	exampleIdStr := ctx.Query("exampleId")
+	exampleId, err := strconv.Atoi(exampleIdStr)
+	if err != nil {
+		ctx.JSON(http.StatusBadRequest, gin.H{"code": http.StatusBadRequest, "message": "error param"})
+		return
+	}
+
+	res := exampleService.GetExample(exampleId)
+	if res == nil {
+		ctx.JSON(http.StatusNotFound, gin.H{"code": http.StatusNotFound, "message": "Not Found"})
+		return
+	}
+	ctx.JSON(http.StatusOK, res)
+}
+```
+
+在上面的代码中，GetExample 方法完成了以下几个内容
+
+- 解析请求参数，获取 `exampleId`
+- 调用 `exampleService.GetExample` 方法，获取 `example` 数据
+- 返回响应

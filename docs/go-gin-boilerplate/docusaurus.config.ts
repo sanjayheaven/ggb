@@ -81,7 +81,7 @@ const config: Config = {
 
       // { name: "og:url", content: "https://github.com/sanjayheaven" },
     ],
-    image: "img/docusaurus-social-card.jpg",
+    image: "img/cover.png",
     navbar: {
       title: "Go Gin Boilerplate",
       logo: { alt: "Logo", src: "img/golang.png" },
