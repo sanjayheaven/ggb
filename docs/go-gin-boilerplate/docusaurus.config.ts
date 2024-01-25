@@ -75,7 +75,7 @@ const config: Config = {
 
       { property: "og:title", content: "Go Gin Boilerplate" },
       { property: "og:image", content: "img/cover.png" },
-      { property: "og:type", content: "Go Gin Boilerplate" },
+      // { property: "og:type", content: "Go Gin Boilerplate" },
 
       { name: "twitter:card", content: "summary" },
 
