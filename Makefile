@@ -26,7 +26,8 @@ lint:
 .PHONY: build
 # build the binary
 build: 
-	./scripts/build.sh
+	go build -v -o build/ggb main.go
+
 
 .PHONY: cache
 # clean cache
