@@ -116,6 +116,15 @@ export default function Home(): JSX.Element {
           </div>
 
           <div className=" sm:max-w-[50%] mx-auto px-4">
+            {/* <div className="flex items-center gap-10 mb-6">
+              <div className=" cursor-pointer bg-white border rounded-md border-solid w-[150px] text-center shadow-md px-5 py-2">
+                CLI
+              </div>
+              <div className=" cursor-pointer bg-white border rounded-md border-solid w-[150px] text-center shadow-md px-5 py-2">
+                Source Code
+              </div>
+            </div> */}
+
             <div>
               <div className=" font-bold text-2xl mb-4">Installations</div>
               <div className=" w-full flex items-center justify-center mx-auto gap-6">
