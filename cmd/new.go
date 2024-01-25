@@ -4,60 +4,22 @@ import (
 	"errors"
 	"fmt"
 	"go-gin-boilerplate/tools"
-	"html/template"
 	"os"
 	"path/filepath"
-	"strings"
 
 	"github.com/spf13/cobra"
 )
 
-func createFile(filePath, templateContent, moduleName string) error {
-	tmpl, err := template.New("module").Parse(templateContent)
-	if err != nil {
-		return err
-	}
-
-	file, err := os.Create(filePath)
-	if err != nil {
-		return err
-	}
-	defer file.Close()
-
-	moduleNamePlural := ""
-	if strings.HasSuffix(moduleName, "y") {
-		moduleNamePlural = strings.TrimSuffix(moduleName, "y") + "ies"
-	} else {
-		moduleNamePlural = moduleName + "s"
-	}
-	moduleNameUpperFirst := strings.ToUpper(string(moduleName[0])) + moduleName[1:]
-
-	data := struct {
-		ModuleName           string
-		ModuleNamePlural     string
-		ModuleNameUpperFirst string
-	}{
-		ModuleName:           moduleName,
-		ModuleNamePlural:     moduleNamePlural,
-		ModuleNameUpperFirst: moduleNameUpperFirst,
-	}
-
-	if err := tmpl.Execute(file, data); err != nil {
-		return err
-	}
-
-	return nil
+var newProjectCmd = &cobra.Command{
+	Use:   "project [project name]",
+	Short: "Create a new project",
+	Args:  cobra.ExactArgs(1),
+	Run: func(cmd *cobra.Command, args []string) {
+		projectName := args[0]
+		fmt.Printf("Creating a new project: %s\n", projectName)
+	},
 }
 
-//	var newProjectCmd = &cobra.Command{
-//		Use:   "project [project name]",
-//		Short: "Create a new project",
-//		Args:  cobra.ExactArgs(1),
-//		Run: func(cmd *cobra.Command, args []string) {
-//			projectName := args[0]
-//			fmt.Printf("Creating a new project: %s\n", projectName)
-//		},
-//	}
 var newModuleCmd = &cobra.Command{
 	Use:   "module [module name]",
 	Short: "Create a new module for the project",
@@ -86,7 +48,7 @@ var newModuleCmd = &cobra.Command{
 
 		for filePath, templateContent := range fileTempaltes {
 			if _, err := os.Stat(filePath); os.IsNotExist(err) {
-				err := createFile(filePath, templateContent, moduleName)
+				err := tools.CreateFileByTmplContent(filePath, templateContent, moduleName)
 				if err != nil {
 					fmt.Printf("Error creating file: %v\n", err)
 					return
@@ -106,7 +68,12 @@ var NewCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		// Do Stuff Here
 		if len(args) < 1 {
-			cmd.Print(errors.New("please enter name"))
+			cmd.Println(errors.New("please enter name"))
+			fmt.Println("See 'ggb help new'")
+			return
+		}
+		if args[0] != "module" && args[0] != "project" {
+			cmd.Println(errors.New("please enter available command"))
 			fmt.Println("See 'ggb help new'")
 			return
 		}
@@ -115,13 +82,35 @@ var NewCmd = &cobra.Command{
 }
 
 func init() {
-	NewCmd.AddCommand(newModuleCmd)
+	NewCmd.AddCommand(newModuleCmd, newProjectCmd)
 }
 
 func run() {
-	fmt.Printf("create new module")
+	fmt.Printf("create new module or new project\n")
 
 	// create template like hugo
 	// todo: ggb new project
+
+	// 需要生成的目录 和文件 有哪些
+
+	// 和开发有关的
+
+	// api，空目录
+	// assets，不需要，
+	// build 不需要
+	// cmd 需要的
+	// config 需要的
+	// docs 不需要
+	// githooks 需要的
+	// internal 需要的
+	// scripts 需要
+	// test 需要
+	// tools 需要
+	// web 需要
+	// .gitignore 需要
+	// go.mod 需要
+	// go.sum 需要
+	// main.go 需要
+	// makefile 需要
 
 }
