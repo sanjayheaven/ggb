@@ -21,7 +21,7 @@ vet:
 .PHONY: lint
 # lint the code
 lint:
-	./scripts/lint.sh
+	golangci-lint run
 
 .PHONY: build
 # build the binary
@@ -54,5 +54,5 @@ generate-template:
 
 .PHONY: all
 # default target
-all: goimports format lint tidy
+all: goimports format vet lint tidy
 
