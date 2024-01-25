@@ -1,9 +1,9 @@
 package cmd
 
 import (
-	"go-gin-boilerplate/configs"
-	"go-gin-boilerplate/internal/pkg/logger"
-	"go-gin-boilerplate/internal/router"
+	"github.com/sanjayheaven/ggb/configs"
+	"github.com/sanjayheaven/ggb/internal/pkg/logger"
+	"github.com/sanjayheaven/ggb/internal/router"
 
 	"net/http"
 

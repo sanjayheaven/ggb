@@ -1,9 +1,10 @@
 package middlewares
 
 import (
-	"go-gin-boilerplate/internal/pkg/utils"
 	"net/http"
 	"strings"
+
+	"github.com/sanjayheaven/ggb/internal/pkg/utils"
 
 	"github.com/gin-gonic/gin"
 )

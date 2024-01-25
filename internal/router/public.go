@@ -1,7 +1,7 @@
 package router
 
 import (
-	"go-gin-boilerplate/internal/controllers"
+	"github.com/sanjayheaven/ggb/internal/controllers"
 
 	"github.com/gin-gonic/gin"
 )

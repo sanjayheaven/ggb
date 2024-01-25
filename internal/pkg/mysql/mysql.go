@@ -2,9 +2,10 @@ package mysql
 
 import (
 	"fmt"
-	"go-gin-boilerplate/configs"
-	"go-gin-boilerplate/internal/models"
-	"go-gin-boilerplate/internal/pkg/logger"
+
+	"github.com/sanjayheaven/ggb/configs"
+	"github.com/sanjayheaven/ggb/internal/models"
+	"github.com/sanjayheaven/ggb/internal/pkg/logger"
 
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"

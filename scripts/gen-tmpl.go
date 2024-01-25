@@ -5,9 +5,10 @@ package main
 
 import (
 	"fmt"
-	"go-gin-boilerplate/tools"
 	"os"
 	"regexp"
+
+	"github.com/sanjayheaven/ggb/tools"
 )
 
 // replaceStrings replace strings in input string according to the replacements map

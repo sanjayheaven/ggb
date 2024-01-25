@@ -2,8 +2,9 @@ package redis
 
 import (
 	"fmt"
-	"go-gin-boilerplate/configs"
-	"go-gin-boilerplate/internal/pkg/logger"
+
+	"github.com/sanjayheaven/ggb/configs"
+	"github.com/sanjayheaven/ggb/internal/pkg/logger"
 
 	"github.com/redis/go-redis/v9"
 )

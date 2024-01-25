@@ -1,8 +1,8 @@
 package services
 
 import (
-	"go-gin-boilerplate/internal/models"
-	"go-gin-boilerplate/internal/pkg/utils"
+	"github.com/sanjayheaven/ggb/internal/models"
+	"github.com/sanjayheaven/ggb/internal/pkg/utils"
 
 	"golang.org/x/crypto/bcrypt"
 )

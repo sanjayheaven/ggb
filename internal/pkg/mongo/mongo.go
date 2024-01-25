@@ -3,9 +3,10 @@ package mongo
 import (
 	"context"
 	"fmt"
-	"go-gin-boilerplate/configs"
-	"go-gin-boilerplate/internal/pkg/logger"
 	"time"
+
+	"github.com/sanjayheaven/ggb/configs"
+	"github.com/sanjayheaven/ggb/internal/pkg/logger"
 
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"

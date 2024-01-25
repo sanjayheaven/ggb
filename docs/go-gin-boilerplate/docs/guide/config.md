@@ -161,7 +161,7 @@ package main
 import (
     "fmt"
 
-    "go-gin-boilerplate/configs"
+    "github.com/sanjayheaven/ggb/configs"
 )
 
 

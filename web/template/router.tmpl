@@ -1,8 +1,8 @@
 package router
 
 import (
-	"go-gin-boilerplate/internal/controllers"
-	"go-gin-boilerplate/internal/middlewares"
+	"github.com/sanjayheaven/ggb/internal/controllers"
+	"github.com/sanjayheaven/ggb/internal/middlewares"
 
 	"github.com/gin-gonic/gin"
 )

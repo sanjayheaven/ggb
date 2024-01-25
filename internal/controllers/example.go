@@ -1,9 +1,10 @@
 package controllers
 
 import (
-	"go-gin-boilerplate/internal/services"
 	"net/http"
 	"strconv"
+
+	"github.com/sanjayheaven/ggb/internal/services"
 
 	"github.com/gin-gonic/gin"
 )

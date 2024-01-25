@@ -1,6 +1,6 @@
 package main
 
-import "go-gin-boilerplate/cmd"
+import "github.com/sanjayheaven/ggb/cmd"
 
 // @title Go Gin Boilerplate API
 // @description This is a swagger api document for Go Gin Boilerplate.

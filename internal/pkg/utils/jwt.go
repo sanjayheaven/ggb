@@ -2,8 +2,9 @@ package utils
 
 import (
 	"fmt"
-	"go-gin-boilerplate/configs"
 	"time"
+
+	"github.com/sanjayheaven/ggb/configs"
 
 	"github.com/golang-jwt/jwt/v5"
 )

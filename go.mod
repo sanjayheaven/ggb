@@ -1,4 +1,4 @@
-module go-gin-boilerplate
+module github.com/sanjayheaven/ggb
 
 go 1.20
 

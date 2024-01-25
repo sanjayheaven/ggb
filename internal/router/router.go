@@ -1,13 +1,13 @@
 package router
 
 import (
-	"go-gin-boilerplate/internal/middlewares"
+	"github.com/sanjayheaven/ggb/internal/middlewares"
 
 	"github.com/gin-gonic/gin"
 	swaggerfiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
 
-	_ "go-gin-boilerplate/api/swagger" // docs.go
+	_ "github.com/sanjayheaven/ggb/api/swagger" // docs.go
 )
 
 var Router *gin.Engine

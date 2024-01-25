@@ -3,9 +3,10 @@ package cmd
 import (
 	"errors"
 	"fmt"
-	"go-gin-boilerplate/tools"
 	"os"
 	"path/filepath"
+
+	"github.com/sanjayheaven/ggb/tools"
 
 	"github.com/spf13/cobra"
 )
