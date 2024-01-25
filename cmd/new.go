@@ -7,7 +7,6 @@ import (
 	"path/filepath"
 
 	"github.com/sanjayheaven/ggb/tools"
-
 	"github.com/spf13/cobra"
 )
 
@@ -18,6 +17,7 @@ var newProjectCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		projectName := args[0]
 		fmt.Printf("Creating a new project: %s\n", projectName)
+		tools.CreateNewProject(projectName)
 	},
 }
 
@@ -67,14 +67,13 @@ var NewCmd = &cobra.Command{
 	Use:   "new",
 	Short: "Create new module or new project",
 	Run: func(cmd *cobra.Command, args []string) {
-		// Do Stuff Here
 		if len(args) < 1 {
-			cmd.Println(errors.New("please enter name"))
+			fmt.Println(errors.New("please enter name"))
 			fmt.Println("See 'ggb help new'")
 			return
 		}
 		if args[0] != "module" && args[0] != "project" {
-			cmd.Println(errors.New("please enter available command"))
+			fmt.Println(errors.New("please enter available command"))
 			fmt.Println("See 'ggb help new'")
 			return
 		}
@@ -90,28 +89,6 @@ func run() {
 	fmt.Printf("create new module or new project\n")
 
 	// create template like hugo
-	// todo: ggb new project
-
-	// 需要生成的目录 和文件 有哪些
-
-	// 和开发有关的
-
-	// api，空目录
-	// assets，不需要，
-	// build 不需要
-	// cmd 需要的
-	// config 需要的
-	// docs 不需要
-	// githooks 需要的
-	// internal 需要的
-	// scripts 需要
-	// test 需要
-	// tools 需要
-	// web 需要
-	// .gitignore 需要
-	// go.mod 需要
-	// go.sum 需要
-	// main.go 需要
-	// makefile 需要
+	// todo: ggb new project <project name>
 
 }

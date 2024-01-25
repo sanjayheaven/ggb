@@ -32,7 +32,7 @@ build:
 .PHONY: cache
 # clean cache
 clean:
-	./scripts/clean.sh
+	rm -rf build/ggb
 
 .PHONY: swagger
 # swager docs generation
