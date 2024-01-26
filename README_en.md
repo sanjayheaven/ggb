@@ -4,14 +4,14 @@
 
 <img src="./assets/golang.png" align="right"/>
 
-![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/sanjayheaven/go-gin-boilerplate)
-![CI](https://github.com/sanjayheaven/go-gin-boilerplate/workflows/Go/badge.svg)
-![License](https://img.shields.io/github/license/sanjayheaven/go-gin-boilerplate)
+![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/sanjayheaven/ggb)
+![CI](https://github.com/sanjayheaven/ggb/workflows/Go/badge.svg)
+![License](https://img.shields.io/github/license/sanjayheaven/ggb)
 
 ## 📘 Documents
 
-- [Project Document](https://sanjayheaven.github.io/go-gin-boilerplate/)
-- [Swagger Api Document](https://go-gin-boilerplate.gganbu.services/swagger/index.html)
+- [Project Document](https://sanjayheaven.github.io/ggb/)
+- [Swagger Api Document](https://ggb.gganbu.services/swagger/index.html)
 
 </div>
 
@@ -50,8 +50,8 @@ A development boilerplate based on the Gin framework, aimed at helping developer
 ## 🚀 Quick Start
 
 ```sh
-git clone https://github.com/sanjayheaven/go-gin-boilerplate.git
-cd go-gin-boilerplate
+git clone https://github.com/sanjayheaven/ggb.git
+cd ggb
 go mod download
 ```
 
@@ -137,13 +137,13 @@ docker compose up -d
 ## 🤝 Support
 
 - Star 🌟 the project
-- Welcome to submit [issue](https://github.com/sanjayheaven/go-gin-boilerplate/issues). Thank you for your support
+- Welcome to submit [issue](https://github.com/sanjayheaven/ggb/issues). Thank you for your support
 - Help promote it on social media and recommend it to friends
 
-  [![Twitter](https://img.shields.io/twitter/url?label=Twitter&logo=twitter&style=flat&url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fgo-gin-boilerplate)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fgo-gin-boilerplate)
-  [![Facebook](https://img.shields.io/twitter/url?label=Facebook&logo=facebook&style=flat&url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fgo-gin-boilerplate)](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fgo-gin-boilerplate)
-  [![WhatsApp](https://img.shields.io/twitter/url?label=WhatsApp&logo=whatsapp&style=flat&url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fgo-gin-boilerplate)](https://api.whatsapp.com/send?text=Wow:%20https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fgo-gin-boilerplate)
-  [![Telegram](https://img.shields.io/twitter/url?label=Telegram&logo=telegram&style=flat&url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fgo-gin-boilerplate)](https://t.me/share/url?url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fgo-gin-boilerplate)
+  [![Twitter](https://img.shields.io/twitter/url?label=Twitter&logo=twitter&style=flat&url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fggb)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fggb)
+  [![Facebook](https://img.shields.io/twitter/url?label=Facebook&logo=facebook&style=flat&url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fggb)](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fggb)
+  [![WhatsApp](https://img.shields.io/twitter/url?label=WhatsApp&logo=whatsapp&style=flat&url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fggb)](https://api.whatsapp.com/send?text=Wow:%20https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fggb)
+  [![Telegram](https://img.shields.io/twitter/url?label=Telegram&logo=telegram&style=flat&url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fggb)](https://t.me/share/url?url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fggb)
 
 - You can also sponsor a cup of coffee on [Ko-Fi](https://ko-fi.com/dorvan) or [Buy Me A Coffee](https://www.buymeacoffee.com/dorvan)
 

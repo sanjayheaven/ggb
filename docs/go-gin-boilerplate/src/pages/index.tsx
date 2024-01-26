@@ -60,7 +60,7 @@ export default function Home(): JSX.Element {
               <img
                 onClick={() =>
                   window.open(
-                    "https://github.com/sanjayheaven/go-gin-boilerplate"
+                    "https://github.com/sanjayheaven/ggb"
                   )
                 }
                 src="https://img.shields.io/github/stars/sanjayheaven/go-gin-boilerplate"
@@ -71,10 +71,10 @@ export default function Home(): JSX.Element {
               <img
                 onClick={() =>
                   window.open(
-                    "https://github.com/sanjayheaven/go-gin-boilerplate"
+                    "https://github.com/sanjayheaven/ggb"
                   )
                 }
-                src="https://github.com/sanjayheaven/go-gin-boilerplate/workflows/Go/badge.svg"
+                src="https://github.com/sanjayheaven/ggb/workflows/Go/badge.svg"
                 alt=""
                 className=" h-6 cursor-pointer"
               />
@@ -97,7 +97,7 @@ export default function Home(): JSX.Element {
           transition-all duration-300 bg-white rounded-md text-black no-underline
           min-w-[170px] sm:min-w-max text-center"
             onClick={() =>
-              window.open("https://github.com/sanjayheaven/go-gin-boilerplate")
+              window.open("https://github.com/sanjayheaven/ggb")
             }
           >
             GitHub
@@ -131,7 +131,7 @@ export default function Home(): JSX.Element {
                 >
                   <div>
                     git clone
-                    https://github.com/sanjayheaven/go-gin-boilerplate.git
+                    https://github.com/sanjayheaven/ggb.git
                   </div>
                   <div>cd go-gin-boilerplate </div>
                   <div>go mod download</div>

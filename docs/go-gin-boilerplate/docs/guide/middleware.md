@@ -54,9 +54,9 @@ func init() {
 
 ## 目前已有的中间件
 
-- [JWT 鉴权中间件](https://github.com/sanjayheaven/go-gin-boilerplate/tree/main/internal/middlewares/jwt.go)
-- [跨域中间件](https://github.com/sanjayheaven/go-gin-boilerplate/blob/main/internal/middlewares/cors.go)
-- [错误处理中间件](https://github.com/sanjayheaven/go-gin-boilerplate/blob/main/internal/middlewares/errorHandle.go)
+- [JWT 鉴权中间件](https://github.com/sanjayheaven/ggb/tree/main/internal/middlewares/jwt.go)
+- [跨域中间件](https://github.com/sanjayheaven/ggb/blob/main/internal/middlewares/cors.go)
+- [错误处理中间件](https://github.com/sanjayheaven/ggb/blob/main/internal/middlewares/errorHandle.go)
 
 ### JWT 鉴权中间件
 

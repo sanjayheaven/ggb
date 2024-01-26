@@ -15,7 +15,7 @@ sidebar_position: 1
 ### 克隆项目
 
 ```sh
-git clone https://github.com/sanjayheaven/go-gin-boilerplate.git
+git clone https://github.com/sanjayheaven/ggb.git
 ```
 
 ### 安装依赖

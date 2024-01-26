@@ -13,12 +13,12 @@ const config: Config = {
   url: "https://sanjayheaven.github.io/",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/go-gin-boilerplate/",
+  baseUrl: "/ggb/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "sanjayheaven", // Usually your GitHub org/user name.
-  projectName: "go-gin-boilerplate", // Usually your repo name.
+  projectName: "ggb", // Usually your repo name.
 
   onBrokenLinks: "ignore",
   onBrokenMarkdownLinks: "warn",
@@ -41,7 +41,7 @@ const config: Config = {
           // showLastUpdateAuthor: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          // editUrl: "https://github.com/sanjayheaven/go-gin-boilerplate/issure",
+          // editUrl: "https://github.com/sanjayheaven/ggb/issure",
         },
         blog: {
           showReadingTime: true,
@@ -99,7 +99,7 @@ const config: Config = {
           position: "right",
           items: [
             {
-              href: "https://github.com/sanjayheaven/go-gin-boilerplate",
+              href: "https://github.com/sanjayheaven/ggb",
               label: "🌟 Star on GitHub",
               target: "_blank",
             },
@@ -114,14 +114,14 @@ const config: Config = {
               target: "_blank",
             },
             {
-              href: "https://github.com/sanjayheaven/go-gin-boilerplate/issues/new",
+              href: "https://github.com/sanjayheaven/ggb/issues/new",
               label: "🆙 Help Improve",
               target: "_blank",
             },
           ],
         },
         {
-          href: "https://github.com/sanjayheaven/go-gin-boilerplate",
+          href: "https://github.com/sanjayheaven/ggb",
           position: "right",
           className: "header-github-link",
           "aria-label": "GitHub repository",
@@ -137,7 +137,7 @@ const config: Config = {
             { label: "Tutorial", to: "/docs/intro" },
             {
               label: "Swagger",
-              to: "https://go-gin-boilerplate.gganbu.services/swagger/index.html",
+              to: "https://ggb.gganbu.services/swagger/index.html",
             },
           ],
         },
@@ -146,7 +146,7 @@ const config: Config = {
           items: [
             {
               label: "GitHub",
-              href: "https://github.com/sanjayheaven/go-gin-boilerplate",
+              href: "https://github.com/sanjayheaven/ggb",
             },
             // {
             //   label: "Discord",

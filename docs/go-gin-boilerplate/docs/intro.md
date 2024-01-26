@@ -6,13 +6,13 @@ sidebar_position: 1
 
 <div>
 
-<img src="/go-gin-boilerplate/img/golang.png" align="right"/>
+<img src="/ggb/img/golang.png" align="right"/>
 
-![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/sanjayheaven/go-gin-boilerplate)
-![CI](https://github.com/sanjayheaven/go-gin-boilerplate/workflows/Go/badge.svg)
-![License](https://img.shields.io/github/license/sanjayheaven/go-gin-boilerplate)
+![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/sanjayheaven/ggb)
+![CI](https://github.com/sanjayheaven/ggb/workflows/Go/badge.svg)
+![License](https://img.shields.io/github/license/sanjayheaven/ggb)
 
-[Swagger 接口文档](https://go-gin-boilerplate.gganbu.services/swagger/index.html)
+[Swagger 接口文档](https://ggb.gganbu.services/swagger/index.html)
 
 </div>
 
@@ -47,8 +47,8 @@ sidebar_position: 1
 ## 快速开始
 
 ```sh
-git clone https://github.com/sanjayheaven/go-gin-boilerplate.git
-cd go-gin-boilerplate
+git clone https://github.com/sanjayheaven/ggb.git
+cd ggb
 go mod download
 ```
 
@@ -127,13 +127,13 @@ docker compose up -d
 ## 支持 🫶
 
 - Star 🌟 项目
-- 欢迎提交 [issue](https://github.com/sanjayheaven/go-gin-boilerplate/issues)。感谢您的支持
+- 欢迎提交 [issue](https://github.com/sanjayheaven/ggb/issues)。感谢您的支持
 - 帮助在社交媒体上宣传并向朋友推荐它
 
-  [![Twitter](https://img.shields.io/twitter/url?label=Twitter&logo=twitter&style=flat&url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fgo-gin-boilerplate)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fgo-gin-boilerplate)
-  [![Facebook](https://img.shields.io/twitter/url?label=Facebook&logo=facebook&style=flat&url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fgo-gin-boilerplate)](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fgo-gin-boilerplate)
-  [![WhatsApp](https://img.shields.io/twitter/url?label=WhatsApp&logo=whatsapp&style=flat&url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fgo-gin-boilerplate)](https://api.whatsapp.com/send?text=Wow:%20https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fgo-gin-boilerplate)
-  [![Telegram](https://img.shields.io/twitter/url?label=Telegram&logo=telegram&style=flat&url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fgo-gin-boilerplate)](https://t.me/share/url?url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fgo-gin-boilerplate)
+  [![Twitter](https://img.shields.io/twitter/url?label=Twitter&logo=twitter&style=flat&url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fggb)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fggb)
+  [![Facebook](https://img.shields.io/twitter/url?label=Facebook&logo=facebook&style=flat&url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fggb)](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fggb)
+  [![WhatsApp](https://img.shields.io/twitter/url?label=WhatsApp&logo=whatsapp&style=flat&url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fggb)](https://api.whatsapp.com/send?text=Wow:%20https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fggb)
+  [![Telegram](https://img.shields.io/twitter/url?label=Telegram&logo=telegram&style=flat&url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fggb)](https://t.me/share/url?url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fggb)
 
 - 你也可以在 [Ko-Fi](https://ko-fi.com/dorvan) 或者 [Buy Me A Coffee](https://www.buymeacoffee.com/dorvan) 上赞助一杯咖啡
 
