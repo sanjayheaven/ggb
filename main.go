@@ -6,9 +6,12 @@ import (
 	"github.com/sanjayheaven/ggb/cmd"
 )
 
-//go:embed configs/*
+//go:embed cmd/*
+//go:embed configs/*.go configs/config.example.yaml
+//go:embed deployments/*
 //go:embed githooks/*
 //go:embed internal/*
+//go:embed tools/*
 //go:embed web/template/*
 //go:embed .air.toml .gitignore go.mod go.sum main.go Makefile
 var EmbedFs embed.FS

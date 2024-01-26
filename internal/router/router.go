@@ -4,10 +4,6 @@ import (
 	"github.com/sanjayheaven/ggb/internal/middlewares"
 
 	"github.com/gin-gonic/gin"
-	swaggerfiles "github.com/swaggo/files"
-	ginSwagger "github.com/swaggo/gin-swagger"
-
-	_ "github.com/sanjayheaven/ggb/api/swagger" // docs.go
 )
 
 var Router *gin.Engine
@@ -29,5 +25,5 @@ func Init() {
 	LoadExampleRoutes(Router)
 
 	// init swagger
-	Router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
+	// Router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
 }

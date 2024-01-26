@@ -33,21 +33,21 @@ func initNewProject(projectName string) {
 
 	// here is the root directory of the project, follow the project-layout standard
 	directories := []string{
-		"api",
-		"assets",
-		"build",
+		// "api",
+		// "assets",
+		// "build",
 		"cmd",
 		"configs",
 		"deployments",
-		"docs",
+		// "docs",
 		"githooks",
 		"internal",
-		"pkg",
+		// "pkg",
 		"scripts",
-		"test",
+		// "test",
 		"tools",
 		"web",
-		"website",
+		// "website",
 	}
 
 	for _, dir := range directories {
