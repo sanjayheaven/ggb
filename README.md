@@ -10,19 +10,19 @@
 
 ## 📘 Documents
 
-- [项目文档](https://sanjayheaven.github.io/ggb/)
-- [Swagger 接口文档](https://ggb.gganbu.services/swagger/index.html)
+- [Project Document](https://sanjayheaven.github.io/ggb/)
+- [Swagger Api Document](https://ggb.gganbu.services/swagger/index.html)
 
 </div>
 
-## 🎬 项目介绍
+## 🎬 Introduction
 
-一个基于 Gin 框架的开发脚手架，旨在帮助开发者快速搭建和开发 Web 应用程序。
+A development boilerplate based on the Gin framework, aimed at helping developers quickly build and develop web applications.
 
-- [English](./README_en.md)
-- [中文介绍](./README.md)
+- [English](./README.md)
+- [中文介绍](./README_zh.md)
 
-## 👀 关键词
+## 👀 Keywords
 
 [Go](https://github.com/golang/go)
 [Gin](https://github.com/gin-gonic/gin)
@@ -36,21 +36,18 @@
 [Zap](https://github.com/uber-go/zap)
 [Jwt](https://github.com/golang-jwt/jwt)
 
-## ✨ 特性
+## ✨ Features
 
-- **快速开发**: 使用 **Gin** 框架和相关工具，加速项目的开发和迭代过程。
-- **简单易用**: 遵循 [project-layout](https://github.com/golang-standards/project-layout/tree/master) 规范, 提供清晰简单的代码结构，使新手也能轻松上手。
-- **先进的 CLI 体验**: 使用 **Cobra** 打造现代命令行工具，简化项目管理和操作。
-- **热重载**: 使用 **Air** 工具，支持热重载，提高开发效率。
-- **一体化日志系统**: 集成 **Logrus** 和 **Lumberjack**, 实现全方位的日志记录和管理。
-- **数据库支持**: 集成 **Gorm**, 支持主流数据库，如 MySQL、PostgreSQL 等。
-- **灵活的中间件**: 整合常用中间件，轻松实现日志、认证、跨域、限流等功能。
-- **API 文档**: 使用 **Gin-Swagger** 生成 API 文档，方便查看和调试接口。
+- **Fast Development**: Using the **Gin** framework and related tools to speed up the development and iteration process of the project..
+- **Easy to use**: Follow the [project-layout](https://github.com/golang-standards/project-layout/tree/master) specification and provide a clear and simple code structure so that even beginners can easily get started.
+- **Advanced CLI**: Using **Cobra** to build modern command line tools to simplify project management and operations.
+- **Hot Reload**: Using **Air** tool, support hot reload, improve development efficiency.
+- **Logging system**: Integrated **Logrus**, **Zap** and **Lumberjack** to achieve all-round log recording and management.
+- **Database Support**: Integrated **Gorm**, support mainstream databases such as MySQL, PostgreSQL, etc.
+- **Flexible Middleware**: Integrate common middleware to easily implement functions such as logging, authentication, cross-domain, and flow control.
+- **API Document**: Use **Gin-Swagger** to generate API documents for easy viewing and debugging of interfaces.
 
-    <!-- 我用了swag生成文档，非常方便用于调试  -->
-  <!-- - **统一错误处理**: 统一的错误处理机制，简化错误信息的捕获和处理。 -->
-
-## 🚀 快速开始
+## 🚀 Quick Start
 
 ```sh
 git clone https://github.com/sanjayheaven/ggb.git
@@ -58,90 +55,97 @@ cd ggb
 go mod download
 ```
 
-### 创建 githooks 软链接【推荐】
+<!-- ### Create a githooks soft link 【Recommended】
 
 ```sh
 cd .git/hooks
 ln -s ../../githooks/* .
 ```
 
-> 提示：
+> Tips:
 >
-> - 如何确认已经创建成功?
+> - How to confirm that the creation is successful?
 >
-> 运行以下命令：
+> Run the following command:
 >
 > ```sh
-> ls -l . # 现在你的当前目录位置应该在 .git/hooks 目录下
+> ls -l . # Now your current directory location should be in the .git/hooks directory
 > ```
 >
-> 如果成功，你将会看到输出包含以下内容：
+> If successful, you will see the output containing the following content:
 >
 > ```sh
 > commit-msg -> ../../githooks/commit-msg
 > pre-commit -> ../../githooks/pre-commit
-> ```
+> ``` -->
 
-### 设置配置文件
+### Configuration Setup
 
-- 进入 `configs` 目录，复制 `config.example.yaml` 文件并重命名为 `config.yaml`。
+- Navigate to the `configs` directory, copy the `config.example.yaml` file, and rename it to `config.yaml`.
 
 ```sh
 cp configs/config.example.yaml configs/config.yaml
 ```
 
-- 修改 `config.yaml` 文件中的配置项。
+- Modify the configuration items in the `config.yaml` file.
 
 ```sh
 vi configs/config.yaml
 ```
 
-### 运行应用程序
+### Run the Application
 
-- 使用 [air](https://github.com/cosmtrek/air) 运行项目 **【推荐】**
+- Run the project using [air](https://github.com/cosmtrek/air) **【Recommended】**
 
 ```sh
 air
 ```
 
-- 使用 [go run](https://golang.org/cmd/go/#hdr-Compile_and_run_Go_program) 运行项目
+- Run the project using [go run](https://golang.org/cmd/go/#hdr-Compile_and_run_Go_program)
 
 ```sh
 go run main.go server
 ```
 
+<!--
 ## 🔨 打包
+
+```sh
+make build
+``` -->
+
+## 🔨 Build
 
 ```sh
 make build
 ```
 
-## 🪤 部署
+## 🪤 Deployment
 
 ### docker-compose
 
-使用 docker-compose 部署应用程序。  
-确保 在服务器中已经安装 docker ，并且熟悉 docker compose 的使用
+Deploy the application using **_docker-compose_**.
+Ensure that Docker is installed on the server, and you are familiar with the usage of docker compose.
 
-- 复制 `deployments/docker-compose.yml` 配置文件到 项目根目录 中
-- 执行以下命令，启动应用程序
+- Copy the `deployments/docker-compose.yml` configuration file to the project root directory.
+- Execute the following command to start the application
 
 ```sh
 docker compose up -d
 ```
 
-## 🤝 支持
+## 🤝 Support
 
-- Star 🌟 项目
-- 欢迎提交 [issue](https://github.com/sanjayheaven/ggb/issues)。感谢您的支持
-- 帮助在社交媒体上宣传并向朋友推荐它
+- Star 🌟 the project
+- Welcome to submit [issue](https://github.com/sanjayheaven/ggb/issues). Thank you for your support
+- Help promote it on social media and recommend it to friends
 
   [![Twitter](https://img.shields.io/twitter/url?label=Twitter&logo=twitter&style=flat&url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fggb)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fggb)
   [![Facebook](https://img.shields.io/twitter/url?label=Facebook&logo=facebook&style=flat&url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fggb)](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fggb)
   [![WhatsApp](https://img.shields.io/twitter/url?label=WhatsApp&logo=whatsapp&style=flat&url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fggb)](https://api.whatsapp.com/send?text=Wow:%20https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fggb)
   [![Telegram](https://img.shields.io/twitter/url?label=Telegram&logo=telegram&style=flat&url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fggb)](https://t.me/share/url?url=https%3A%2F%2Fgithub.com%2Fsanjayheaven%2Fggb)
 
-- 你也可以在 [Ko-Fi](https://ko-fi.com/dorvan) 或者 [Buy Me A Coffee](https://www.buymeacoffee.com/dorvan) 上赞助一杯咖啡
+- You can also sponsor a cup of coffee on [Ko-Fi](https://ko-fi.com/dorvan) or [Buy Me A Coffee](https://www.buymeacoffee.com/dorvan)
 
   <a href='https://ko-fi.com/J3J1T95FG' target='_blank'>
   <img width="145" height="40" src='https://storage.ko-fi.com/cdn/kofi2.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' />

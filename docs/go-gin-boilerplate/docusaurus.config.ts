@@ -90,7 +90,7 @@ const config: Config = {
           type: "docSidebar",
           sidebarId: "tutorialSidebar",
           position: "left",
-          label: "使用文档",
+          label: "Guide",
         },
         // { to: "/blog", label: "Blog", position: "left" },
         // { type: "localeDropdown", position: "right" },

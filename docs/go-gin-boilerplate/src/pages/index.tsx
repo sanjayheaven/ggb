@@ -21,7 +21,7 @@ const features = [
   },
   {
     title: "一体化日志系统",
-    description: "集成 Logrus 和 Lumberjack, 实现全方位的日志记录和管理。",
+    description: "集成 Logrus、Zap 和 Lumberjack, 实现全方位的日志记录和管理。",
   },
   {
     title: "数据库支持",
@@ -34,6 +34,49 @@ const features = [
   {
     title: "API 文档",
     description: "使用 Gin-Swagger 生成 API 文档，方便查看和调试接口。",
+  },
+];
+
+const features_en = [
+  {
+    title: "Fast Development",
+    description:
+      "Using the Gin framework and related tools to speed up the development and iteration process of the project.",
+  },
+  {
+    title: "Easy to use",
+    description:
+      "Follow the project-layout specification and provide a clear and simple code structure so that novices can easily get started.",
+  },
+  {
+    title: "Advanced CLI",
+    description:
+      "Using Cobra to build modern command line tools to simplify project management and operations.",
+  },
+  {
+    title: "Hot reload",
+    description:
+      "Using Air tool, support hot reload, improve development efficiency.",
+  },
+  {
+    title: "Logging system",
+    description:
+      "Integrated Logrus, Zap and Lumberjack to achieve all-round log recording and management.",
+  },
+  {
+    title: "Database support",
+    description:
+      "Integrated Gorm, support mainstream databases such as MySQL, PostgreSQL, etc.",
+  },
+  {
+    title: "Flexible middleware",
+    description:
+      "Integrate common middleware to easily implement functions such as logging, authentication, cross-domain, and flow control.",
+  },
+  {
+    title: "API document",
+    description:
+      "Use Gin-Swagger to generate API documents for easy viewing and debugging of interfaces.",
   },
 ];
 
@@ -59,20 +102,16 @@ export default function Home(): JSX.Element {
             <div className=" mt-4 flex items-center gap-4 mx-auto justify-center">
               <img
                 onClick={() =>
-                  window.open(
-                    "https://github.com/sanjayheaven/ggb"
-                  )
+                  window.open("https://github.com/sanjayheaven/ggb")
                 }
-                src="https://img.shields.io/github/stars/sanjayheaven/go-gin-boilerplate"
+                src="https://img.shields.io/github/stars/sanjayheaven/ggb"
                 alt=""
                 className=" h-6 cursor-pointer"
               />
 
               <img
                 onClick={() =>
-                  window.open(
-                    "https://github.com/sanjayheaven/ggb"
-                  )
+                  window.open("https://github.com/sanjayheaven/ggb")
                 }
                 src="https://github.com/sanjayheaven/ggb/workflows/Go/badge.svg"
                 alt=""
@@ -96,9 +135,7 @@ export default function Home(): JSX.Element {
             className=" box-border sm:w-[200px] sm:max-w-[200px] hover:shadow-xl cursor-pointer py-3 sm:py-4 px-4 sm:px-10 font-bold text-2xl 
           transition-all duration-300 bg-white rounded-md text-black no-underline
           min-w-[170px] sm:min-w-max text-center"
-            onClick={() =>
-              window.open("https://github.com/sanjayheaven/ggb")
-            }
+            onClick={() => window.open("https://github.com/sanjayheaven/ggb")}
           >
             GitHub
           </div>
@@ -126,14 +163,11 @@ export default function Home(): JSX.Element {
               <div className=" font-bold text-2xl mb-4">Installations</div>
               <div className=" w-full flex items-center justify-center mx-auto gap-6">
                 <code
-                  lang="sh"
+                  lang="shell"
                   className=" w-full p-4 sm:p-8 bg-[#2b303b] text-white"
                 >
-                  <div>
-                    git clone
-                    https://github.com/sanjayheaven/ggb.git
-                  </div>
-                  <div>cd go-gin-boilerplate </div>
+                  <div>git clone https://github.com/sanjayheaven/ggb.git</div>
+                  <div>cd ggb </div>
                   <div>go mod download</div>
                 </code>
               </div>
@@ -143,7 +177,7 @@ export default function Home(): JSX.Element {
               <div className=" font-bold text-2xl mb-4">Config Setup</div>
               <div className=" w-full flex items-center justify-center mx-auto gap-6">
                 <code
-                  lang="sh"
+                  lang="shell"
                   className=" w-full p-4 sm:p-8 bg-[#2b303b] text-white"
                 >
                   <div>cp configs/config.example.yaml configs/config.yaml</div>
@@ -159,7 +193,7 @@ export default function Home(): JSX.Element {
                   lang="sh"
                   className=" w-full p-4 sm:p-8 bg-[#2b303b] text-white"
                 >
-                  <div>go run main.go</div>
+                  <div>go run main.go server</div>
                 </code>
               </div>
             </div>
@@ -173,13 +207,13 @@ export default function Home(): JSX.Element {
           </div>
 
           <div className=" md:grid grid-cols-3 justify-items-center w-max mx-auto gap-6">
-            {features.map((item) => {
+            {features_en.map((item) => {
               return (
                 <div
                   key={item.title}
                   className=" hover:scale-110 max-w-max cursor-pointer shadow-lg rounded-lg w-[250px] p-8 transition-all duration-300"
                 >
-                  <div className="font-bold ">{item.title}</div>
+                  <div className="font-bold text-[larger] ">{item.title}</div>
                   <div>{item.description}</div>
                 </div>
               );

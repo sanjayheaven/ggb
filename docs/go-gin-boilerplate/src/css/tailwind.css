@@ -124,6 +124,10 @@
   margin-bottom: 1rem;
 }
 
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
 .mb-8 {
   margin-bottom: 2rem;
 }
@@ -144,10 +148,6 @@
   margin-top: 2rem;
 }
 
-.mb-6 {
-  margin-bottom: 1.5rem;
-}
-
 .box-border {
   box-sizing: border-box;
 }
@@ -164,8 +164,8 @@
   height: 1.5rem;
 }
 
-.w-\[200px\] {
-  width: 200px;
+.w-\[150px\] {
+  width: 150px;
 }
 
 .w-\[250px\] {
@@ -178,10 +178,6 @@
 
 .w-max {
   width: max-content;
-}
-
-.w-\[150px\] {
-  width: 150px;
 }
 
 .min-w-\[170px\] {
@@ -244,14 +240,14 @@
   border-style: solid;
 }
 
-.bg-\[\#2b303b\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(43 48 59 / var(--tw-bg-opacity));
-}
-
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#2b303b\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(43 48 59 / var(--tw-bg-opacity));
 }
 
 .bg-gradient-to-tr {
@@ -268,12 +264,12 @@
   --tw-gradient-to: #fff var(--tw-gradient-to-position);
 }
 
-.p-4 {
-  padding: 1rem;
-}
-
 .p-8 {
   padding: 2rem;
+}
+
+.p-4 {
+  padding: 1rem;
 }
 
 .px-2 {
@@ -286,9 +282,14 @@
   padding-right: 1rem;
 }
 
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .py-20 {
@@ -299,26 +300,6 @@
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-}
-
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-.py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-
-.px-3 {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
 }
 
 .text-center {
@@ -343,6 +324,10 @@
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-\[larger\] {
+  font-size: larger;
 }
 
 .font-bold {

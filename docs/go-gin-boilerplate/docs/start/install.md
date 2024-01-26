@@ -23,7 +23,7 @@ git clone https://github.com/sanjayheaven/ggb.git
 进入工作目录
 
 ```sh
-cd go-gin-boilerplate
+cd ggb
 ```
 
 执行以下命令，安装依赖
@@ -32,7 +32,7 @@ cd go-gin-boilerplate
 go mod download
 ```
 
-## 创建 githooks 软链接【推荐】
+<!-- ## 创建 githooks 软链接【推荐】
 
 通过创建软链接，可以在每次提交代码时，自动运行 `pre-commit` 和 `commit-msg` 钩子，从而实现自动化测试和规范化提交信息。
 
@@ -65,4 +65,4 @@ ln -s ../../githooks/* .
 > ```sh
 > commit-msg -> ../../githooks/commit-msg
 > pre-commit -> ../../githooks/pre-commit
-> ```
+> ``` -->

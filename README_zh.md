@@ -1,12 +1,8 @@
----
-sidebar_position: 1
----
-
 # Go Gin Boilerplate
 
 <div>
 
-<img src="/ggb/img/golang.png" align="right"/>
+<img src="./assets/golang.png" align="right"/>
 
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/sanjayheaven/ggb)
 ![CI](https://github.com/sanjayheaven/ggb/workflows/Go/badge.svg)
