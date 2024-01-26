@@ -1,7 +1,6 @@
 package cmd
 
 import (
-	"errors"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -10,19 +9,8 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var newProjectCmd = &cobra.Command{
-	Use:   "project [project name]",
-	Short: "Create a new project",
-	Args:  cobra.ExactArgs(1),
-	Run: func(cmd *cobra.Command, args []string) {
-		projectName := args[0]
-		fmt.Printf("Creating a new project: %s\n", projectName)
-		tools.CreateNewProject(projectName)
-	},
-}
-
-var newModuleCmd = &cobra.Command{
-	Use:   "module [module name]",
+var NewCmd = &cobra.Command{
+	Use:   "new [module name]",
 	Short: "Create a new module for the project",
 	Args:  cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
@@ -63,32 +51,19 @@ var newModuleCmd = &cobra.Command{
 	},
 }
 
-var NewCmd = &cobra.Command{
-	Use:   "new",
-	Short: "Create new module or new project",
-	Run: func(cmd *cobra.Command, args []string) {
-		if len(args) < 1 {
-			fmt.Println(errors.New("please enter name"))
-			fmt.Println("See 'ggb help new'")
-			return
-		}
-		if args[0] != "module" && args[0] != "project" {
-			fmt.Println(errors.New("please enter available command"))
-			fmt.Println("See 'ggb help new'")
-			return
-		}
-		run()
-	},
-}
-
-func init() {
-	NewCmd.AddCommand(newModuleCmd, newProjectCmd)
-}
-
-func run() {
-	fmt.Printf("create new module or new project\n")
-
-	// create template like hugo
-	// todo: ggb new project <project name>
-
-}
+// var NewCmd = &cobra.Command{
+// 	Use:   "new",
+// 	Short: "Create new module or new project",
+// 	Run: func(cmd *cobra.Command, args []string) {
+// 		if len(args) < 1 {
+// 			fmt.Println(errors.New("please enter name"))
+// 			fmt.Println("See 'ggb help new'")
+// 			return
+// 		}
+// 		if args[0] != "module" && args[0] != "project" {
+// 			fmt.Println(errors.New("please enter available command"))
+// 			fmt.Println("See 'ggb help new'")
+// 			return
+// 		}
+// 	},
+// }

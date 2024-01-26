@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"embed"
 	"fmt"
 	"os"
 
@@ -19,10 +20,15 @@ var rootCmd = &cobra.Command{
 func init() {
 	rootCmd.AddCommand(ServerStartCmd) // add server start command
 	rootCmd.AddCommand(VersionCmd)     // add version command
-	rootCmd.AddCommand(NewCmd)         // add new command
+	rootCmd.AddCommand(NewCmd)         // add new module command
+	rootCmd.AddCommand(InitCmd)        // add init project command
 }
 
-func Execute() {
+var embedFs embed.FS
+
+func Execute(fs embed.FS) {
+	embedFs = fs
+
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Println(err)
 		os.Exit(1)

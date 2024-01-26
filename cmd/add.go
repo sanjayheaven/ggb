@@ -29,7 +29,6 @@ var AddCmd = &cobra.Command{
 			fmt.Println("See 'ggb help add'")
 			return
 		}
-
 		module := args[0]
 
 		switch module {

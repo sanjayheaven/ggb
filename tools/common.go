@@ -1,9 +1,11 @@
 package tools
 
 import (
+	"embed"
 	"errors"
 	"fmt"
 	"html/template"
+	"io/fs"
 	"os"
 	"path/filepath"
 	"strings"
@@ -21,8 +23,56 @@ func CopyFile(src, dest string) {
 	}
 }
 
-// CopyDir copy dir
+// writeFile write file
+// if dest dir not exist, create it
+func writeFile(fileContent []byte, dest string) error {
 
+	destDir := filepath.Dir(dest)
+	if _, err := os.Stat(destDir); os.IsNotExist(err) {
+		err := os.MkdirAll(destDir, os.ModePerm)
+		if err != nil {
+			fmt.Printf("Error creating directory: %v\n", err)
+			return err
+		}
+	}
+
+	err := os.WriteFile(dest, fileContent, 0644)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
+// CopyDirFromEmbedFS copy dir from embed fs
+func CopyDirFromEmbedFS(src embed.FS, dest string) {
+
+	err := fs.WalkDir(src, ".", func(path string, d os.DirEntry, err error) error {
+		if err != nil {
+			return err
+		}
+		// fmt.Println(path, filepath.Join(dest, path))
+
+		if !d.IsDir() && path != "." {
+			fileContent, err := src.ReadFile(path)
+			if err != nil {
+				panic(err)
+			}
+
+			e := writeFile(fileContent, filepath.Join(dest, path))
+			if e != nil {
+				panic(e)
+			}
+		}
+
+		return nil
+	})
+	if err != nil {
+		panic(err)
+	}
+
+}
+
+// CopyDir copy dir
 func CopyDir(src, dest string) {
 	srcInfo, err := os.Stat(src)
 	if err != nil {
@@ -101,70 +151,4 @@ func CreateFileByTmplContent(filePath, templateContent, moduleName string) error
 	}
 
 	return nil
-}
-
-// CreateNewProject create new project
-func CreateNewProject(projectName string) {
-	// todo: create new project
-
-	// if exist same name directory, return
-	if _, err := os.Stat(projectName); os.IsNotExist(err) {
-		err := os.MkdirAll(projectName, os.ModePerm)
-		if err != nil {
-			fmt.Printf("Error creating directory: %v\n", err)
-			return
-		}
-	} else {
-		fmt.Printf("Directory already exists: %s\n", projectName)
-		return
-	}
-
-	// create root dir
-	rootDir := filepath.Join(".", projectName)
-	err := os.MkdirAll(rootDir, 0755)
-	if err != nil {
-		fmt.Printf("Error creating root directory: %v\n", err)
-		return
-	}
-
-	directories := []string{"api", "assets", "build", "cmd", "configs", "docs", "githooks", "internal", "scripts", "test", "tools", "web"}
-
-	for _, dir := range directories {
-		err := os.MkdirAll(filepath.Join(rootDir, dir), os.ModePerm)
-		if err != nil {
-			fmt.Printf("Error creating child directory: %v\n", err)
-			return
-		}
-	}
-
-	// copy root files to root dir
-	CopyFile(".air.toml", filepath.Join(rootDir, ".air.timl"))
-	CopyFile(".gitignore", filepath.Join(rootDir, ".gitignore"))
-	CopyFile("go.mod", filepath.Join(rootDir, "go.mod"))
-	CopyFile("go.sum", filepath.Join(rootDir, "go.sum"))
-	CopyFile("main.go", filepath.Join(rootDir, "main.go"))
-	CopyFile("Makefile", filepath.Join(rootDir, "Makefile"))
-
-	// copy cmd dir
-	CopyDir("cmd", filepath.Join(rootDir, "cmd"))
-
-	// copy configs dir
-	CopyDir("configs", filepath.Join(rootDir, "configs"))
-	CopyFile("configs/config.example.yaml", filepath.Join(rootDir, "configs/config.yaml"))
-
-	// copy githooks dir
-	CopyDir("githooks", filepath.Join(rootDir, "githooks"))
-
-	// copy internal
-	CopyDir("internal", filepath.Join(rootDir, "internal"))
-
-	// copy scripts
-	CopyDir("scripts", filepath.Join(rootDir, "scripts"))
-
-	// copy tools
-	CopyDir("tools", filepath.Join(rootDir, "tools"))
-
-	// copy web/template
-	CopyDir("web/template", filepath.Join(rootDir, "web/template"))
-
 }
