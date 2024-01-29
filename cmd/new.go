@@ -50,20 +50,3 @@ var NewCmd = &cobra.Command{
 
 	},
 }
-
-// var NewCmd = &cobra.Command{
-// 	Use:   "new",
-// 	Short: "Create new module or new project",
-// 	Run: func(cmd *cobra.Command, args []string) {
-// 		if len(args) < 1 {
-// 			fmt.Println(errors.New("please enter name"))
-// 			fmt.Println("See 'ggb help new'")
-// 			return
-// 		}
-// 		if args[0] != "module" && args[0] != "project" {
-// 			fmt.Println(errors.New("please enter available command"))
-// 			fmt.Println("See 'ggb help new'")
-// 			return
-// 		}
-// 	},
-// }

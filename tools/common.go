@@ -50,7 +50,6 @@ func CopyDirFromEmbedFS(src embed.FS, dest string) {
 		if err != nil {
 			return err
 		}
-		// fmt.Println(path, filepath.Join(dest, path))
 
 		if !d.IsDir() && path != "." {
 			fileContent, err := src.ReadFile(path)
@@ -62,6 +61,8 @@ func CopyDirFromEmbedFS(src embed.FS, dest string) {
 			if e != nil {
 				panic(e)
 			}
+
+			fmt.Println("created: ", filepath.Join(dest, path))
 		}
 
 		return nil

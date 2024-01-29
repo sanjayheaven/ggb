@@ -11,6 +11,7 @@ import (
 //go:embed deployments/*
 //go:embed githooks/*
 //go:embed internal/*
+//go:embed scripts/*
 //go:embed tools/*
 //go:embed web/template/*
 //go:embed .air.toml .gitignore go.mod go.sum main.go Makefile

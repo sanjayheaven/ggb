@@ -20,12 +20,12 @@ func addSwagger() error {
 }
 
 var AddCmd = &cobra.Command{
-	Use:     "add [module name]",
-	Short:   "Get the version of Go-Gin-Boilerplate",
-	Example: "ggb version",
+	Use:     "add [component name]",
+	Short:   "Add a component to the project",
+	Example: "ggb add swagger",
 	Run: func(cmd *cobra.Command, args []string) {
 		if len(args) < 1 {
-			fmt.Println("please enter module name")
+			fmt.Println("please enter component name")
 			fmt.Println("See 'ggb help add'")
 			return
 		}
