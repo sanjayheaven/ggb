@@ -166,8 +166,23 @@ export default function Home(): JSX.Element {
                   lang="shell"
                   className=" w-full p-4 sm:p-8 bg-[#2b303b] text-white"
                 >
-                  <div>git clone https://github.com/sanjayheaven/ggb.git</div>
-                  <div>cd ggb </div>
+                  {/* <div>git clone https://github.com/sanjayheaven/ggb.git</div> */}
+                  <div>go install github.com/sanjayheaven/ggb@latest</div>
+                  {/* <div>cd ggb </div>
+                  <div>go mod download</div> */}
+                </code>
+              </div>
+            </div>
+            {/* init */}
+            <div className=" mt-8">
+              <div className=" font-bold text-2xl mb-4">Init a new project</div>
+              <div className=" w-full flex items-center justify-center mx-auto gap-6">
+                <code
+                  lang="shell"
+                  className=" w-full p-4 sm:p-8 bg-[#2b303b] text-white"
+                >
+                  <div>ggb init ggb</div>
+                  <div>cd ggb</div>
                   <div>go mod download</div>
                 </code>
               </div>
@@ -181,7 +196,6 @@ export default function Home(): JSX.Element {
                   className=" w-full p-4 sm:p-8 bg-[#2b303b] text-white"
                 >
                   <div>cp configs/config.example.yaml configs/config.yaml</div>
-                  <div>vi configs/config.yaml</div>
                 </code>
               </div>
             </div>

@@ -56,11 +56,56 @@ func init() {
 
 目前 Go Gin Boilerplate 支持以下子命令：
 
+- **init**：初始化项目
+- **new**：创建新模块
 - **server**：启动服务
 - **version**：查看版本信息
-- **new**：创建新模块/项目
+
+## 安装
+
+### 从源码安装
+
+```sh
+go install github.com/sanjayheaven/ggb@latest
+```
 
 ## 子命令
+
+### init
+
+init 子命令用于初始化项目。
+
+```sh
+ggb init hello
+```
+
+这里 **hello** 为项目名称，执行命令之后，会在当前目录下创建 hello 项目。
+
+### new
+
+new 子命令用于创建新模块/项目。
+
+**创建新模块**
+
+在终端中执行以下命令，可以创建新模块
+
+```sh
+go run main.go new module hello
+```
+
+命令会依次生成以下文件：
+
+- `internal/models/hello.go`
+- `internal/services/hello.go`
+- `internal/controllers/hello.go`
+- `internal/router/hello.go`
+
+各个文件依照的模板文件分别为：
+
+- `web/template/model.tmpl`
+- `web/template/service.tmpl`
+- `web/template/controller.tmpl`
+- `web/template/router.tmpl`
 
 ### server
 
@@ -147,32 +192,6 @@ version 子命令用于查看版本信息。
 ```sh
 go run main.go version
 ```
-
-### new
-
-new 子命令用于创建新模块/项目。
-
-**创建新模块**
-
-在终端中执行以下命令，可以创建新模块
-
-```sh
-go run main.go new module hello
-```
-
-命令会依次生成以下文件：
-
-- `internal/models/hello.go`
-- `internal/services/hello.go`
-- `internal/controllers/hello.go`
-- `internal/router/hello.go`
-
-各个文件依照的模板文件分别为：
-
-- `web/template/model.tmpl`
-- `web/template/service.tmpl`
-- `web/template/controller.tmpl`
-- `web/template/router.tmpl`
 
 ## 生成模版
 

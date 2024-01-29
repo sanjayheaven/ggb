@@ -23,8 +23,8 @@ sidebar_position: 1
 
 一个基于 Gin 框架的开发脚手架，旨在帮助开发者快速搭建和开发 Web 应用程序。
 
-- [English](./README.md)
-- [中文介绍](./README_zh.md)
+<!-- - [English](./README.md)
+- [中文介绍](./README_zh.md) -->
 
 ## 👀 关键词
 

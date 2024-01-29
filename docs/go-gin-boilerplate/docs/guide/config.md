@@ -115,26 +115,7 @@ func init() {
 
 # server
 server:
-  port: ":YOUR_SERVER_PORT"
-
-# jwt
-jwt:
-  secret: YOUR_JWT_SECRET
-
-# mysql
-mysql:
-  host: YOUR_MYSQL_HOST
-  port: YOUR_MYSQL_PORT
-  user: YOUR_MYSQL_USER
-  password: YOUR_MYSQL_PASSWORD
-  database: YOUR_DATABASE_NAME
-
-# redis
-redis:
-  host: YOUR_REDIS_HOST
-  port: YOUR_REDIS_PORT
-  password: YOUR_REDIS_PASSWORD
-  db: YOUR_REDIS_DB
+  port: ":8080"
 ```
 
 在克隆项目之后，我们也可以非常方便的根据 `config.example.yaml` 文件，创建 `config.yaml` 文件，并修改其中的配置内容。

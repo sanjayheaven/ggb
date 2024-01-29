@@ -23,24 +23,5 @@ cp configs/config.example.yaml configs/config.yaml
 
 # server
 server:
-  port: ":YOUR_SERVER_PORT"
-
-# jwt
-jwt:
-  secret: YOUR_JWT_SECRET
-
-# mysql
-mysql:
-  host: YOUR_MYSQL_HOST
-  port: YOUR_MYSQL_PORT
-  user: YOUR_MYSQL_USER
-  password: YOUR_MYSQL_PASSWORD
-  database: YOUR_DATABASE_NAME
-
-# redis
-redis:
-  host: YOUR_REDIS_HOST
-  port: YOUR_REDIS_PORT
-  password: YOUR_REDIS_PASSWORD
-  db: YOUR_REDIS_DB
+  port: ":8080"
 ```
